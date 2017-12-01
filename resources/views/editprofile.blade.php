@@ -8,17 +8,16 @@
                     <div class="panel-heading">Profile</div>
 
                     <div class="panel-body">
-                        <form class="form-horizontal" method="POST">
-                            {{ csrf_field() }}
+                        <form class="form-horizontal" method="POST" action=" {{ route('updateprofile', auth()->user()->id) }}">
+                            {{ csrf_field() }}  
 
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Name</label>
 
                                 <div class="col-md-6">
-                                    <!-- <input id="name" type="text" class="form-control" name="name"
+                                    <input id="name" type="text" class="form-control" name="name"
                                            value="{{ old('name') }}" placeholder="{{ auth()->user()->name }}"
-                                           autofocus> -->
-                                           <h5> {{ auth()->user()->name }} </h5>
+                                           autofocus>
                                     @if ($errors->has('name'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('name') }}</strong>
@@ -31,9 +30,8 @@
                                 <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
                                 <div class="col-md-6">
-                                   <!--  <input id="email" type="email" class="form-control" name="email"
-                                         value="{{ old('email') }}" placeholder="{{ auth()->user()->email }}" >   -->
-                                    <h5> {{ auth()->user()->email }} </h5>
+                                    <input id="email" type="email" class="form-control" name="email"
+                                         value="{{ old('email') }}" placeholder="{{ auth()->user()->email }}" >  
                                     @if ($errors->has('email'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('email') }}</strong>
@@ -46,10 +44,9 @@
                                 <label for="user_name" class="col-md-4 control-label">User Name</label>
 
                                 <div class="col-md-6">
-                                    <!-- <input id="user_name" type="text" class="form-control" name="user_name"
-                                           value="{{ old('user_name') }}" placeholder="{{ auth()->user()->user_name }}"> -->
+                                    <input id="user_name" type="text" class="form-control" name="user_name"
+                                           value="{{ old('user_name') }}" placeholder="{{ auth()->user()->user_name }}">
 
-                                    <h5> {{ auth()->user()->user_name }} </h5>
                                     @if ($errors->has('user_name'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('user_name') }}</strong>
@@ -76,9 +73,8 @@
                                 <label for="birthday" class="col-md-4 control-label">Birthday</label>
 
                                 <div class="col-md-6">
-                                    <!-- <input id="birthday" class="form-control" name="birthday"
-                                           value="{{ old('birthday') }}" placeholder="{{ auth()->user()->birthday }}"> -->
-                                    <h5> {{ auth()->user()->birthday }} </h5>
+                                    <input id="birthday" class="form-control" name="birthday"
+                                           value="{{ old('birthday') }}" placeholder="{{ auth()->user()->birthday }}">
                                     @if ($errors->has('birthday'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('birthday') }}</strong>
@@ -91,9 +87,8 @@
                                 <label for="address" class="col-md-4 control-label">Address</label>
 
                                 <div class="col-md-6">
-                                    <!-- <input id="address" type="text" class="form-control" name="address"
-                                          value="{{ old('address') }}" placeholder="{{ auth()->user()->address }}"> -->
-                                    <h5> {{ auth()->user()->address }} </h5>
+                                    <input id="address" type="text" class="form-control" name="address"
+                                          value="{{ old('address') }}" placeholder="{{ auth()->user()->address }}">
                                     @if ($errors->has('address'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('address') }}</strong>
@@ -106,9 +101,8 @@
                                 <label for="weight" class="col-md-4 control-label">Weight</label>
 
                                 <div class="col-md-6">
-                                 <!--    <input id="weight" type="number" class="form-control" name="weight"
-                                            value="{{ old('weight') }}" placeholder="{{ auth()->user()->weight }}"> -->
-                                    <h5> {{ auth()->user()->weight }} </h5>
+                                    <input id="weight" type="number" class="form-control" name="weight"
+                                            value="{{ old('weight') }}" placeholder="{{ auth()->user()->weight }}">
                                     @if ($errors->has('weight'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('weight') }}</strong>
@@ -121,9 +115,8 @@
                                 <label for="job" class="col-md-4 control-label">Job</label>
 
                                 <div class="col-md-6">
-                                    <!-- <input id="job" type="text" class="form-control" name="job"
-                                    <!--        value="{{ old('job') }}" placeholder="{{ auth()->user()->job }}"> -->
-                                    <h5> {{ auth()->user()->job }} </h5>
+                                    <input id="job" type="text" class="form-control" name="job"
+                                           value="{{ old('job') }}" placeholder="{{ auth()->user()->job }}">
                                     @if ($errors->has('job'))
                                         <span class="help-block">
                                         <strong>{{ $errors->first('job') }}</strong>
@@ -157,11 +150,7 @@
 
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
-                                    <button type="button" class="btn btn-primary" onclick="window.location='{{ route("editprofile", auth()->user()->id)  }}'">Edit Profile</button>
-
-                                    <button type="submit" class="btn btn-primary">
-                                        Change password
-                                    </button>
+                                    <button type="button" class="btn btn-primary" onclick="window.location='{{ route("updateprofile", auth()->user()->id) }}'">Update</button>
                                 </div>
                             </div>
                         </form>
