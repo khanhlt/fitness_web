@@ -13,8 +13,7 @@ class ProfileController extends Controller
      */
 
     public function view($id) {
-	   $user = User::find($id);
-       return view('profile',[$user->id]);
-
+	  	$user = User::find($id);
+      return view('profile',[$user->id]);
     }
 }
