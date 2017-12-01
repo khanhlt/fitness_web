@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateRegistrationItemTable extends Migration {
+class CreateCommentCourseTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,13 @@ class CreateRegistrationItemTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('registration_item', function(Blueprint $table)
+		Schema::create('course_comment', function(Blueprint $table)
 		{
-			$table->increments('regis_id');
+			$table->increments('id');
 			$table->integer('user_id');
-			$table->integer('courses_id');
-			$table->time('time');
-			$table->timestamps();
+			$table->integer('course_id');
+			$table->string('text', 1024);
+			$table->string('image', 1024);
 		});
 	}
 
@@ -30,7 +30,7 @@ class CreateRegistrationItemTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('registration_item');
+		Schema::drop('course_comment');
 	}
 
 }
