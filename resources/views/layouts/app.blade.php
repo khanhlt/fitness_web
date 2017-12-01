@@ -67,6 +67,14 @@
                                             onclick=";">
                                             My profile
                                         </a>
+
+                                        <li>
+                                             <a href="{{ url('/new-post') }}">Add new post</a>
+                                        </li>
+
+                                        <li>
+                                             <a href="{{ url('/user/'.Auth::id().'/posts') }}">My Posts</a>
+                                        </li>
                                     </li>
                                 </ul>
                             </li>
