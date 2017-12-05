@@ -29,4 +29,8 @@ Route::get('course', 'CourseController@show_all')->name('course');
 
 Route::get('course/{id}', 'CourseController@show');
 
+Route::post('listcourse','CourseController@listcourse')->name('listcourse');
+
 Route::post('/comment/{id}', 'CourseCommentController@postComment');
+
+Route::post('reg_course','RegistrationController@registration')->name('reg_course');
