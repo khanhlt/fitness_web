@@ -37,9 +37,9 @@ Route::group(['middleware' => ['auth']], function()
 	// save new post
 	Route::post('new-post', 'PostController@store');
 	// edit post form
-	Route::get('edit/{slug}', 'PostController@update');
+	Route::get('edit/{slug}', 'PostController@edit');
 	// update post
-	Route::post('update', 'PostController@edit');
+	Route::post('update', 'PostController@update');
 	// delete post
 	Route::get('delete/{id}', 'PostController@destroy');
 	// display user's all posts
@@ -47,7 +47,20 @@ Route::group(['middleware' => ['auth']], function()
 	// display user's drafts
 	 Route::get('my-drafts','UserController@user_posts_draft');
 	 // add comment
-	 Route::post('comment/add','CommentController@store');
+	 Route::post('comment/add','PostCommentController@store');
 	 // delete comment
-	 Route::post('comment/delete/{id}','CommentController@destroy');
+	 Route::post('comment/delete/{id}','PostCommentController@destroy');
 });
+
+/* user's posts */
+Route::get('user/{id}/posts','UserController@user_posts')->where('id', '[0-9]+');
+// display single post
+Route::get('/{slug}',['as' => 'post', 'uses' => 'PostController@show'])->where('slug', '[A-Za-z0-9-_]+');
+
+
+/* course */
+Route::get('course', 'CourseController@show_all')->name('course');
+
+Route::get('course/{id}', 'CourseController@show');
+
+Route::post('/comment/{id}', 'CourseCommentController@postComment');

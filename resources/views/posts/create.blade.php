@@ -10,7 +10,6 @@
     Add New Post
 @endsection
 @section('content')
-@section('content')
     <div class="container">
         <div class="row">
             <form action="/new-post" method="post">

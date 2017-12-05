@@ -3,7 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 
-class CreateLikeCourseTable extends Migration {
+class CreatePostCommentTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,13 @@ class CreateLikeCourseTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('course_like', function(Blueprint $table)
+		Schema::create('post_comment', function(Blueprint $table)
 		{
 			$table->increments('id');
 			$table->integer('user_id');
-			$table->integer('course_id');
+			$table->string('content', 8096);
+			$table->string('image', 1024);
+			$table->timestamps();
 		});
 	}
 
@@ -28,7 +30,7 @@ class CreateLikeCourseTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('course_like');
+		Schema::drop('post_comment');
 	}
 
 }

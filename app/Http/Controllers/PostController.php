@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Posts;
 use App\User;
 use Redirect;
+use Session;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\PostFormRequest;
 use Illuminate\Http\Request;
@@ -70,10 +71,10 @@ class PostController extends Controller
     public function update(Request $request)
     {
         //
-        $post_id = Input::get('post_id');
+        $post_id = $request->input('post_id');
         $post = Posts::find($post_id);
 
-        $title = Input::get('title');
+        $title = $request->input('title');
         $slug = str_slug($title);
         $duplicate = Posts::where('slug', $slug)->first();
         if ($duplicate) {
@@ -84,19 +85,19 @@ class PostController extends Controller
             }
         }
         $post->title = $title;
-        $post->body = Input::get('body');
+        $post->body = $request->input('body');
         if ($request->has('save')) {
             $post->active = 0;
             $message = 'Post saved successfully';
-            $landing = 'edit/' . $post->slug;
         } else {
             $post->active = 1;
             $message = 'Post updated successfully';
-            $landing = $post->slug;
+//            $landing = $post->slug;
         }
+        $landing = 'edit/' . $post->slug;
         $post->save();
         return redirect($landing)->withMessage($message);
-
+//        session()->flash('success', 'Saved!');
     }
 
     public function destroy(Request $request, $id)
@@ -109,5 +110,4 @@ class PostController extends Controller
 
         return redirect('/')->with($data);
     }
-
 }
