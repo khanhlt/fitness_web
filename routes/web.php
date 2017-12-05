@@ -52,7 +52,7 @@ Route::group(['middleware' => ['auth']], function()
 	 Route::post('comment/delete/{id}','PostCommentController@destroy');
 });
 
-/* user's posts */
+/* display all posts */
 Route::get('user/{id}/posts','UserController@user_posts')->where('id', '[0-9]+');
 // display single post
 Route::get('/{slug}',['as' => 'post', 'uses' => 'PostController@show'])->where('slug', '[A-Za-z0-9-_]+');

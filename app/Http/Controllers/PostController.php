@@ -22,8 +22,8 @@ class PostController extends Controller
 
         //page heading
         $title = 'Latest Posts';
-        //return home.blade.php template from resources/views folder
 
+        //return home.blade.php template from resources/views folder
         return view('home')->withPosts($posts)->withTitle($title);
 
     }
@@ -92,12 +92,15 @@ class PostController extends Controller
         } else {
             $post->active = 1;
             $message = 'Post updated successfully';
-//            $landing = $post->slug;
         }
-        $landing = 'edit/' . $post->slug;
         $post->save();
+
+//        return redirect('edit/' . $post->slug)->withMessage($message);
+
+        // return all posts of user
+        $user = $request->user();
+        $landing = 'user/'.$user->id.'/posts';
         return redirect($landing)->withMessage($message);
-//        session()->flash('success', 'Saved!');
     }
 
     public function destroy(Request $request, $id)
