@@ -66,6 +66,10 @@ Route::get('course', 'CourseController@show_all')->name('course');
 
 Route::get('course/{id}', 'CourseController@show');
 
+Route::post('/comment/{id}', 'CourseCommentController@postComment');
+
+Route::get('/like/{id}', 'CourseLikeController@like');
+
 Route::post('listcourse','CourseController@listcourse')->name('listcourse');
 
 Route::post('/comment/{id}', 'CourseCommentController@postComment');

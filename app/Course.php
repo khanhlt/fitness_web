@@ -3,6 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\CourseContent;
+use App\CourseLike;
 
 class Course extends Model
 {
@@ -17,10 +19,5 @@ class Course extends Model
 	{
 		return $this->hasMany('App\CourseComment');
 	}
-
-	public function content()
-	{
-		return $this->hasMany('App\CourseContent');
-	}	
 
 }
