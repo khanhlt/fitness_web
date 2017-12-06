@@ -24,3 +24,11 @@ Route::get('/profile/{id}', 'ProfileController@view')->name('profile');
 Route::get('/editprofile/{id}', 'EditProfileController@edit')->name('editprofile');
 
 Route::get('/updateprofile/{id}', 'EditProfileController@update')->name('updateprofile');
+
+Route::get('course', 'CourseController@show_all')->name('course');
+
+Route::get('course/{id}', 'CourseController@show');
+
+Route::post('/comment/{id}', 'CourseCommentController@postComment');
+
+Route::get('/like/{id}', 'CourseLikeController@like');
