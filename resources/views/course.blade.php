@@ -69,7 +69,7 @@
 									<div class="panel-body">
 										<h5>Course level : {{ $course->level }}</h5>	
 										<br>
-										@if(isset($user_id))
+										@if(isset(Illuminate\Support\Facades\Auth::user()->id))
 										<form action="like/{{$course->id}}" method="get">
 											<button type="submit" class="btn btn-primary glyphicon glyphicon-hand-up">
 												{{ count($course->like) }}</button>
@@ -92,8 +92,7 @@
 							<div class="col-md-4">
 							<image width=300px height=auto max-height=400px  
 								src="{{$course->image_url}}">
-							</div>			
-						
+							</div>
 					</tr>
 				</table>
 			</div>
@@ -103,7 +102,6 @@
 		@endif
 			{!! $courses->links() !!}
 	</div>
-
 @endsection
 
 {{-- </body>
