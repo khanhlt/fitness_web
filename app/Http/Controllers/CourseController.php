@@ -27,4 +27,6 @@ class CourseController extends Controller
 		$user_id = Auth::user()->id;
 		return view('course1')->with(['course' => $course, 'user_id' => $user_id , 'comments' => $comments]);
 	}
+
+
 }

@@ -21,6 +21,6 @@ class CourseCommentController extends Controller
   	$comment->text = $request->content;
   	$comment->save();
 
-  	return redirect("course/$id/")->with('text',$comment->text);
+  	return redirect("course");
   }
 }
