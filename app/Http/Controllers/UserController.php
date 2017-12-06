@@ -104,25 +104,22 @@ class UserController extends Controller
     public function user_posts_all()
     {
         //
-<<<<<<< HEAD
 //        $user = $request->user();
         $posts = Posts::/*where('author_id', $user->id)*/orderBy('created_at', 'desc')->paginate(5);
 //        $title = $user->name;
-=======
         // $user = $request->user();
         $posts = Posts::orderBy('created_at', 'desc')->paginate(5);
         //$title = $user->name;
->>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         return view('posts/blogposts')->withPosts($posts);
     }
 
-    public function user_posts_draft(Request $request)
-    {
-        //
-        $user = $request->user();
-        $posts = Posts::where('author_id', $user->id)->where('active', '0')->orderBy('created_at', 'desc')->paginate(5);
-        $title = $user->name;
-        return view('posts/blogposts')->withPosts($posts)->withTitle($title);
-
-    }
+//    public function user_posts_draft(Request $request)
+//    {
+//        //
+//        $user = $request->user();
+//        $posts = Posts::where('author_id', $user->id)->where('active', '0')->orderBy('created_at', 'desc')->paginate(5);
+//        $title = $user->name;
+//        return view('posts/blogposts')->withPosts($posts)->withTitle($title);
+//
+//    }
 }
