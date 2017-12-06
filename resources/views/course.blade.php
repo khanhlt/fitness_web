@@ -49,7 +49,7 @@
 				</div>
 				@if(isset($user_id))
 				<div class="nav navbar-nav navbar-right">
-					<a href="{{ route('logout') }}"
+					<a href="{{ route('losgout') }}"
   						onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
               <h4 id="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</h4>
@@ -65,6 +65,7 @@
 
 		<div class="title m-b-md">Course</div>
 		@yield('content')
+
 
 		@if($courses != '')
 			@foreach ($courses as $course)
