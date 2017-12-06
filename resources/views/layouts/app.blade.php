@@ -16,7 +16,7 @@
 <body>
 <div class="topnav">
     <a href="{{ route('home') }}">Home</a>
-    <a href="#news">Courses</a>
+    <a href="{{ route('course') }}">Courses</a>
     <a href="#contact">Trainers</a>
     <a href="#contact">Blog</a>
     <a href="#about">About</a>
