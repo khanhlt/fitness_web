@@ -24,4 +24,25 @@ class CourseController extends Controller
 		$user_id = Auth::user()->id;
 		return view('course1')->with(['course' => $course, 'user_id' => $user_id , 'comments' => $comments]);
 	}
+
+	public function listcourse(Request $request)
+	{
+
+		if (($request->ages <= 40) && (($request->weight) >= ($request->height -90)) )
+		{
+			$course = Course::select()->where('level','=','1')->get();
+			return view('mypage',['course'=> $course]);
+			// return view('mypage')->with('course' => $course);
+		} else
+		{
+			if ($request->ages >50 )
+			{
+				$course = Course::select()->where('level','=','2')->get();
+				return view('mypage',['course'=> $course]);
+			} else {
+				$course = Course::select()->where('level','=','3')->get();
+				return view('mypage',['course'=> $course]);
+			}
+		}
+	}
 }

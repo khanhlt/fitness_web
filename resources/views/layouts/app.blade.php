@@ -67,6 +67,17 @@
                                             onclick=";">
                                             My profile
                                         </a>
+
+                                        <a href="{{ route("ListRegistion", auth()->user()->id)}}"
+                                           onclick=";">
+                                            My Page
+                                        </a>
+
+                                        <a href="{{ route("listTrainer", auth()->user()->id)}}"
+                                           onclick=";">
+                                            Trainer
+                                        </a>
+
                                     </li>
                                 </ul>
                             </li>
