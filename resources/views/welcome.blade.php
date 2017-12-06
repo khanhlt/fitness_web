@@ -1,4 +1,4 @@
-<!doctype html>
+@extends('layouts.app')
 <html lang="{{ app()->getLocale() }}">
 <head>
     <meta charset="utf-8">
@@ -14,113 +14,65 @@
 
     <!-- Styles -->
     <style>
-        body {
-            margin: 0;
-        }
-
-        .topnav {
-            overflow: hidden;
-            background-color: #c1e2de;
-        }
-
-        .topnav a {
-            float: left;
-            color: #984513;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 17px;
-            font-weight: bold;
-        }
-
-        .topnav a:hover {
-            background-color: #ddd;
-            color: #000000;
-        }
-
-        .mySlides {
-            display: none
-        }
-
-        .w3-left, .w3-right, .w3-badge {
-            cursor: pointer
-        }
-
-        .w3-badge {
-            height: 13px;
-            width: 13px;
-            padding: 0
-        }
-
-        html, body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Raleway', sans-serif;
-            font-weight: 100;
-            height: 100vh;
-            margin: 0;
-        }
-
-        .full-height {
-            height: 100vh;
-        }
-
-        .flex-center {
-            align-items: center;
-            display: flex;
-            justify-content: center;
-        }
-
-        .position-ref {
-            position: relative;
-        }
-
-        .top-right {
-            position: absolute;
-            right: 10px;
-            top: 18px;
-        }
-
-        .content {
-            text-align: center;
-        }
-
-        .title {
-            font-size: 84px;
-        }
-
-        .links > a {
-            color: #636b6f;
-            padding: 0 25px;
-            font-size: 12px;
-            font-weight: 600;
-            letter-spacing: .1rem;
-            text-decoration: none;
-            text-transform: uppercase;
-        }
-
-        .m-b-md {
-            margin-bottom: 30px;
-        }
     </style>
 </head>
 <body>
 <div class="topnav">
-    <a href="#home">Home</a>
+    <a href="{{ route('home') }}">Home</a>
     <a href="#news">Courses</a>
     <a href="#contact">Trainers</a>
     <a href="#contact">Blog</a>
     <a href="#about">About</a>
-    @if (Route::has('login'))
-        <div class="top-right links">
-            @auth
-                <a href="{{ url('/home') }}">Home</a>
+    <div class="collapse navbar-collapse" id="app-navbar-collapse">
+        <!-- Left Side Of Navbar -->
+        <ul class="nav navbar-nav">
+            &nbsp;
+        </ul>
+
+        <!-- Right Side Of Navbar -->
+        <ul class="nav navbar-nav navbar-right">
+            <!-- Authentication Links -->
+            @guest
+                <li><a href="{{ route('login') }}">Login</a></li>
+                <li><a href="{{ route('register') }}">Register</a></li>
                 @else
-                    <a href="{{ route('login') }}">Login</a>
-                    <a href="{{ route('register') }}">Register</a>
-                    @endauth
-        </div>
-    @endif
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true"
+                           aria-haspopup="true">
+                            {{ Auth::user()->name }} <span class="caret"></span>
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="{{ route('logout') }}"
+                                   onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                    Logout
+                                </a>
+
+                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                                      style="display: none;">
+                                    {{ csrf_field() }}
+                                </form>
+
+                                <a href="{{ route("profile", auth()->user()->id)}}"
+                                   onclick=";">
+                                    My profile
+                                </a>
+
+                            <li>
+                                <a href="{{ url('/new-post') }}">Add new post</a>
+                            </li>
+
+                            <li>
+                                <a href="{{ url('/user/'.Auth::id().'/posts') }}">My Posts</a>
+                            </li>
+                            </li>
+                        </ul>
+                    </li>
+                    @endguest
+        </ul>
+    </div>
 </div>
 <div class="flex-center position-ref full-height">
 
@@ -153,9 +105,12 @@
 
 
                         <div class="w3-content" style="max-width:800px">
-                            <img class="mySlides" src="https://www.w3schools.com/w3css/img_nature_wide.jpg" style="width:100%">
-                            <img class="mySlides" src="https://www.w3schools.com/w3css/img_fjords_wide.jpg" style="width:100%">
-                            <img class="mySlides" src="https://www.w3schools.com/w3css/img_mountains_wide.jpg" style="width:100%">
+                            <img class="mySlides" src="https://www.w3schools.com/w3css/img_nature_wide.jpg"
+                                 style="width:100%">
+                            <img class="mySlides" src="https://www.w3schools.com/w3css/img_fjords_wide.jpg"
+                                 style="width:100%">
+                            <img class="mySlides" src="https://www.w3schools.com/w3css/img_mountains_wide.jpg"
+                                 style="width:100%">
                         </div>
 
                         <div class="w3-center">

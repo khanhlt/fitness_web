@@ -103,10 +103,10 @@ class UserController extends Controller
     public function user_posts_all(Request $request)
     {
         //
-        $user = $request->user();
-        $posts = Posts::where('author_id', $user->id)->orderBy('created_at', 'desc')->paginate(5);
-        $title = $user->name;
-        return view('posts/blogposts')->withPosts($posts)->withTitle($title);
+//        $user = $request->user();
+        $posts = Posts::/*where('author_id', $user->id)*/orderBy('created_at', 'desc')->paginate(5);
+//        $title = $user->name;
+        return view('posts/blogposts')->withPosts($posts);
     }
 
     public function user_posts_draft(Request $request)

@@ -17,9 +17,9 @@
 <div class="topnav">
     <a href="{{ route('home') }}">Home</a>
     <a href="{{ route('course') }}">Courses</a>
-    <a href="#contact">Trainers</a>
-    <a href="#contact">Blog</a>
-    <a href="#about">About</a>
+    <a href="#trainers">Trainers</a>
+    <a href="#blog">Blog</a>
+    {{--<a href="#about">About</a>--}}
     <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->
         <ul class="nav navbar-nav">
