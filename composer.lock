@@ -538,7 +538,11 @@
                 "framework",
                 "laravel"
             ],
+<<<<<<< HEAD
             "time": "2017-12-04 14:19:08"
+=======
+            "time": "2017-12-04T14:19:08+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "laravel/tinker",
@@ -1381,7 +1385,11 @@
             ],
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2017-12-02 18:20:11"
+=======
+            "time": "2017-12-02T18:20:11+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "symfony/css-selector",
@@ -1553,7 +1561,11 @@
             ],
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2017-11-09 17:30:28"
+=======
+            "time": "2017-11-09T17:30:28+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "symfony/finder",
@@ -1744,7 +1756,11 @@
             ],
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
+<<<<<<< HEAD
             "time": "2017-12-04 23:05:00"
+=======
+            "time": "2017-12-04T23:05:00+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2293,7 +2309,11 @@
                 "docblock",
                 "parser"
             ],
+<<<<<<< HEAD
             "time": "2017-07-22 10:58:02"
+=======
+            "time": "2017-07-22T10:58:02+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "doctrine/cache",
@@ -2367,7 +2387,11 @@
                 "cache",
                 "caching"
             ],
+<<<<<<< HEAD
             "time": "2017-08-25 07:02:50"
+=======
+            "time": "2017-08-25T07:02:50+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "doctrine/collections",
@@ -2434,7 +2458,11 @@
                 "collections",
                 "iterator"
             ],
+<<<<<<< HEAD
             "time": "2017-07-22 10:37:32"
+=======
+            "time": "2017-07-22T10:37:32+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "doctrine/common",
@@ -2507,7 +2535,11 @@
                 "persistence",
                 "spl"
             ],
+<<<<<<< HEAD
             "time": "2017-08-31 08:43:38"
+=======
+            "time": "2017-08-31T08:43:38+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "doctrine/dbal",
@@ -2580,7 +2612,11 @@
                 "persistence",
                 "queryobject"
             ],
+<<<<<<< HEAD
             "time": "2017-11-19 13:38:54"
+=======
+            "time": "2017-11-19T13:38:54+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "doctrine/instantiator",
@@ -2634,7 +2670,11 @@
                 "constructor",
                 "instantiate"
             ],
+<<<<<<< HEAD
             "time": "2017-07-22 11:58:36"
+=======
+            "time": "2017-07-22T11:58:36+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "filp/whoops",
@@ -3283,7 +3323,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2017-12-06 09:29:45"
+=======
+            "time": "2017-12-06T09:29:45+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3553,7 +3597,11 @@
                 "testing",
                 "xunit"
             ],
+<<<<<<< HEAD
             "time": "2017-12-06 09:42:03"
+=======
+            "time": "2017-12-06T09:42:03+00:00"
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
         },
         {
             "name": "phpunit/phpunit-mock-objects",

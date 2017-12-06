@@ -7171,10 +7171,16 @@ html, body {
 }
 
 .footer {
+<<<<<<< HEAD
+=======
+    position: relative;
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
     left: 0;
     bottom: 0;
     width: 100%;
     background-color: white;
     color:  #984513;
     text-align: center;
+    flex: auto;
+    margin-top: 40px;
 }

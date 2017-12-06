@@ -13,7 +13,7 @@ class CourseCommentController extends Controller
 {
   public function postComment($id, Request $request)
   {
-  	$course = Coursoure::find($id);
+  	$course = Course::find($id);
 
     $comment = new CourseComment;
   	$comment->course_id = $id;

@@ -12,14 +12,20 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
 </head>
 <body>
 <div class="topnav">
     <a href="{{ route('home') }}">Home</a>
     <a href="{{ route('course') }}">Courses</a>
+<<<<<<< HEAD
     <a href="#trainers">Trainers</a>
     <a href="{{ route('all-posts) }}">Blog</a>
     {{--<a href="#about">About</a>--}}
+=======
+    <a href="{{ route('listTrainer') }}">Trainers</a>
+    <a href="{{ route('all-posts')}}">Blog</a>
+>>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
     <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->
         <ul class="nav navbar-nav">
@@ -52,27 +58,21 @@
                                     {{ csrf_field() }}
                                 </form>
 
+                               
                                 <a href="{{ route("profile", auth()->user()->id)}}"
-                                   onclick=";">
+                                    onclick=";">
                                     My profile
                                 </a>
-                                        <a href="{{ route("profile", auth()->user()->id)}}"
-                                            onclick=";">
-                                            My profile
-                                        </a>
 
-                                        <a href="{{ route("ListRegistion", auth()->user()->id)}}"
-                                           onclick=";">
-                                            My Page
-                                        </a>
+                                <a href="{{ route("ListRegistion", auth()->user()->id)}}"
+                                   onclick=";">
+                                    My Page
+                                </a>
 
-                                        <a href="{{ route("listTrainer", auth()->user()->id)}}"
-                                           onclick=";">
-                                            Trainer
-                                        </a>
-
-                                    </li>
-                                </ul>
+                                <a href="{{ route("listTrainer", auth()->user()->id)}}"
+                                   onclick=";">
+                                    Trainer
+                                </a>
                             <li>
                                 <a href="{{ url('/new-post') }}">Add new post</a>
                             </li>
@@ -80,46 +80,19 @@
                             <li>
                                 <a href="{{ url('/user/'.Auth::id().'/posts') }}">My Posts</a>
                             </li>
+
+                            </li>
+                                </ul>
+
                             </li>
                         </ul>
                     </li>
                     @endguest
         </ul>
     </div>
-    {{--@if (Route::has('login'))--}}
-    {{--<div class="top-right links">--}}
-    {{--@auth--}}
-    {{--<a href="{{ url('/home') }}">Home</a>--}}
-    {{--@else--}}
-    {{--<a href="{{ route('login') }}">Login</a>--}}
-    {{--<a href="{{ route('register') }}">Register</a>--}}
-    {{--@endauth--}}
-    {{--</div>--}}
-    {{--@endif--}}
+
 </div>
 <div id="app">
-    {{--<nav class="navbar navbar-default navbar-static-top">--}}
-    {{--<div class="container">--}}
-    {{--<div class="navbar-header">--}}
-
-    {{--<!-- Collapsed Hamburger -->--}}
-    {{--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"--}}
-    {{--data-target="#app-navbar-collapse" aria-expanded="false">--}}
-    {{--<span class="sr-only">Toggle Navigation</span>--}}
-    {{--<span class="icon-bar"></span>--}}
-    {{--<span class="icon-bar"></span>--}}
-    {{--<span class="icon-bar"></span>--}}
-    {{--</button>--}}
-
-    {{--<!-- Branding Image -->--}}
-    {{--<a class="navbar-brand" href="{{ url('/') }}">--}}
-    {{--{{ config('app.name', 'Laravel') }}--}}
-    {{--</a>--}}
-    {{--</div>--}}
-
-    {{--</div>--}}
-    {{--</nav>--}}
-
     @yield('content')
 </div>
 
