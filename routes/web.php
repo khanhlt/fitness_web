@@ -19,6 +19,7 @@ Auth::routes();
 
 Route::get('/layouts/app', 'HomeController@index')->name('home');
 
+Route::get('/all-posts', 'UserController@user_posts_all')->name('all-posts');
 
 //user profile
 Route::get('/profile/{id}', 'UserController@show')->name('profile');

@@ -21,7 +21,7 @@
     <a href="{{ route('home') }}">Home</a>
     <a href="#news">Courses</a>
     <a href="#contact">Trainers</a>
-    <a href="#contact">Blog</a>
+    <a href="{{ route('all-posts') }}">Blog</a>
     <a href="#about">About</a>
     <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->

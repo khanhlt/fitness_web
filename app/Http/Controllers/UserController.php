@@ -100,7 +100,7 @@ class UserController extends Controller
         return view('posts/blogposts')->withPosts($posts)->withTitle($title);
     }
 
-    public function user_posts_all(Request $request)
+    public function user_posts_all()
     {
         //
 //        $user = $request->user();
