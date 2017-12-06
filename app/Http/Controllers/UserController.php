@@ -77,14 +77,15 @@ class UserController extends Controller
         if ($validator->fails()) {
             $user->name = "validate fails";
         }
-//        if (!Hash::check($request->input('current_password'), $user->password)) {
-//
-//        } else {
-        $user->password = bcrypt($request->input('new_password'));
-//        }
-        $user->save();
-        $landing = 'profile/' . $user->id;
-        return redirect($landing);
+        if (!Hash::check($request->input('current_password'), $user->password)) {
+            return redirect()->back()->with('alert','Wrong Password!');
+        } else {
+            $user->password = bcrypt($request->input('new_password'));
+            $user->save();
+            $landing = 'profile/' . $user->id;
+            return redirect($landing);
+        }
+
     }
     /*
      * Display the posts of a particular user

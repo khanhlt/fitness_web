@@ -1,43 +1,47 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>Course</title>
-	
-	<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+{{--<!DOCTYPE html>--}}
+{{--<html>--}}
+{{--<head>--}}
+	{{--<meta charset="utf-8">--}}
+	{{--<meta http-equiv="X-UA-Compatible" content="IE=edge">--}}
+	{{--<title>Course</title>--}}
+	{{----}}
+	{{--<link rel="stylesheet" type="text/css" href="{{asset('css/style.css')}}">--}}
+	{{--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">--}}
+  {{--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">--}}
+  {{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
+  {{--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>--}}
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
+  {{--<!-- Fonts -->--}}
+  {{--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">--}}
 
-  <!-- Styles -->
-  <style>
-    .title {
-        font-size: 84px;
-        text-align: center;
-        font-family: 'Raleway', sans-serif;
-    }
+  {{--<!-- Styles -->--}}
+  {{--<style>--}}
+    {{--.title {--}}
+        {{--font-size: 84px;--}}
+        {{--text-align: center;--}}
+        {{--font-family: 'Raleway', sans-serif;--}}
+    {{--}--}}
 
-    .links > a {
-        color: #636b6f;
-        padding: 0 25px;
-        font-size: 12px;
-        font-weight: 600;
-        letter-spacing: .1rem;
-        text-decoration: none;
-        text-transform: uppercase;
-    }
+    {{--.links > a {--}}
+        {{--color: #636b6f;--}}
+        {{--padding: 0 25px;--}}
+        {{--font-size: 12px;--}}
+        {{--font-weight: 600;--}}
+        {{--letter-spacing: .1rem;--}}
+        {{--text-decoration: none;--}}
+        {{--text-transform: uppercase;--}}
+    {{--}--}}
 
-    .m-b-md {
-        margin-bottom: 30px;
-    }
-  </style>
-</head>
-<body>
+    {{--.m-b-md {--}}
+        {{--margin-bottom: 30px;--}}
+    {{--}--}}
+  {{--</style>--}}
+{{--</head>--}}
+{{--<body>--}}
+
+@extends('layouts.app')
+@section('content')
+
 	<div id="content">
 		<nav class="navbar navbar-default navbar-static-top">
 			<div class="container">
@@ -100,5 +104,7 @@
 			{{'No course!'}}
 		@endif
 	</div>
-</body>
-</html>
+@endsection
+
+{{--</body>--}}
+{{--</html>--}}

@@ -14,24 +14,37 @@
                             </div>
                         @endif
                         <tr>
-                            <td>Course</td>
-                            <td>Time</td><br>
-                         </tr>
+                            <div class="col-md-6">
+                                <td>Course</td>
+                            </div>
+                            <div class="col-md-6">
+                                <td>Time</td>
+                                <br>
+                            </div>
+
+
+                        </tr>
 
                         @foreach($registration as $regis)
 
-                             <?php
-                                $date = date('Y-m-d H:i:s');
-                             $datetime1 = strtotime($date);
-                             $datetime2 = strtotime($regis->created_at);
-                             $secs = $datetime2 - $datetime1;
-                              $days=  gmdate("d H:i:s",$secs);
-                                     ?>
+                            <?php
+                            $date = date('Y-m-d H:i:s');
+                            $datetime2 = strtotime($date);
+                            $datetime1 = strtotime($regis->created_at);
+                            $secs = $datetime2 - $datetime1;
+                            $days = gmdate("H:i:s", $secs);
+                            ?>
                             <tr>
-                             <td><a href="CourseContent/{{$regis->course_id}}"> {{$regis->course->title}}</a></td>
-                             <td>{{ $days}}</td><br>
-                         </tr>
-                      @endforeach
+                                <div class="col-md-6">
+                                    <td><a href="CourseContent/{{$regis->course_id}}"> {{$regis->course->title}}</a>
+                                    </td>
+                                </div>
+                                <div>
+                                    <td>{{ $days}}</td>
+                                    <br>
+                                </div>
+                            </tr>
+                        @endforeach
                     </div>
                 </div>
             </div>
