@@ -49,7 +49,7 @@
 				</div>
 				@if(isset($user_id))
 				<div class="nav navbar-nav navbar-right">
-					<a href="{{ route('losgout') }}"
+					<a href="{{ route('logout') }}"
   						onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
               <h4 id="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</h4>
@@ -66,55 +66,36 @@
 		<div class="title m-b-md">Course</div>
 		@yield('content')
 
-
-		@if($courses != '')
-			@foreach ($courses as $course)
+		@if($course != '')
+			
 			<div class="container">
-				<table>
-					<tr>
-						
-							<div class="col-md-8">
-								<div class="panel panel-success">
-									<div class="panel-heading">
-										<h5 class="panel-title"><a href="course/{{$course->id}}">
-											 {!!$course->title!!}</a></h5>	
-									</div>
-									<div class="panel-body">
-										<h5>Course level : {{ $course->level }}</h5>	
-										<br>
-										@if(isset($user_id))
-										<form action="like/{{$course->id}}" method="get">
-											<button type="submit" class="btn btn-primary glyphicon glyphicon-hand-up">
-												{{ count($course->like) }}</button>
-										</form>
-										
-										<h5>Comment ... <span class="glyphicon glyphicon-pencil"></span></h5>
-										<form action="comment/{{$course->id}}" method="post" role="form">
-											<input type="hidden" name="_token" value="{{csrf_token()}}"/>
-											<div class="form-group">
-												<textarea class="form-control" name="content" row="3"></textarea>
-											</div>
-											<button type="submit" class="btn btn-primary" style="float: right;">Send</button>
-										</form>
-										@endif
-									</div>
-								</div>	
-							</div>			
-						
-						
-							<div class="col-md-4">
-							<image width=300px height=auto max-height=400px  
-								src="{{$course->image_url}}">
-							</div>			
-						
-					</tr>
-				</table>
+				<div class="panel panel-success">
+					<div class="panel-heading">
+						<h5 class="panel-title">{!!$course->title!!}</h5>	
+					</div>
+					<div class="panel-body">
+						<h5>Course level : {{$course->level}}</h5>	
+						<br>
+						<h5>Comment:</h5>
+						<!-- @foreach($comments as $comment) -->
+							<!-- {{$comments}} -->
+						<!-- @endforeach	 -->
+						<?php 
+							foreach ($comments as $comment)
+							{
+								echo $comment->text;
+								echo "<br>";
+							}
+								 
+						?>
+						<br>
+					</div>
+				</div>
 			</div>
-			@endforeach	
+				
 		@else
 			{{'No course!'}}
 		@endif
-			{!! $courses->links() !!}
 	</div>
 </body>
 </html>

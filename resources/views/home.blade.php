@@ -49,8 +49,6 @@
                                 <button type="submit">Submit</button>
                             </fieldset>
                         </form>
-
-=======
                         <div class="w3-container">
                             <h2>Let make your every is a small progress!</h2>
                             <p>Better health with various fitness courses</p>
@@ -72,7 +70,6 @@
                             <button class="w3-button demo" onclick="currentDiv(2)">2</button>
                             <button class="w3-button demo" onclick="currentDiv(3)">3</button>
                         </div>
-
                         <script>
                             var slideIndex = 1;
                             showDivs(slideIndex);
