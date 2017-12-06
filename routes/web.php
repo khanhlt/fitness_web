@@ -21,12 +21,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 //user profile
-Route::get('/profile/{id}', 'ProfileController@view')->name('profile');
+Route::get('/profile/{id}', 'UserController@show')->name('profile');
 
-Route::get('/editprofile/{id}', 'EditProfileController@edit')->name('editprofile');
+Route::get('/editprofile/{id}', 'UserController@edit')->name('editprofile');
 
-Route::get('/updateprofile/{id}', 'EditProfileController@update')->name('updateprofile');
+Route::post('/updateprofile/{id}', 'UserController@update')->name('updateprofile');
 
+Route::get('/editpassword/{id}', 'UserController@editPassword')->name('editpassword');
+
+Route::post('/updatepassword/{id}', 'UserController@updatePassword')->name('updatepassword');
 
 /* blog */
 // check for logged in user
