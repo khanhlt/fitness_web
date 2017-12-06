@@ -14,11 +14,12 @@ class CourseContent extends Model
 	}
   
 	public function done_action()
-	{
-		return $this->belongsTo('App\done_action');
+    {
+        return $this->belongsTo('App\done_action');
+    }
 
-	public function content()
-	{
-		return $this->content;
-	}
+//	public function content()
+//	{
+//		return $this->content;
+//	}
 }

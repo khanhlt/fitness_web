@@ -77,14 +77,15 @@ class UserController extends Controller
         if ($validator->fails()) {
             $user->name = "validate fails";
         }
-//        if (!Hash::check($request->input('current_password'), $user->password)) {
-//
-//        } else {
-        $user->password = bcrypt($request->input('new_password'));
-//        }
-        $user->save();
-        $landing = 'profile/' . $user->id;
-        return redirect($landing);
+        if (!Hash::check($request->input('current_password'), $user->password)) {
+            return redirect()->back()->with('alert','Wrong Password!');
+        } else {
+            $user->password = bcrypt($request->input('new_password'));
+            $user->save();
+            $landing = 'profile/' . $user->id;
+            return redirect($landing);
+        }
+
     }
     /*
      * Display the posts of a particular user
@@ -97,16 +98,16 @@ class UserController extends Controller
         //
         $posts = Posts::where('author_id', $id)->where('active', '1')->orderBy('created_at', 'desc')->paginate(5);
         $title = User::find($id)->name;
-        return view('posts/blogposts')->withPosts($posts)->withTitle($title);
+        return view('posts.myposts')->withPosts($posts)->withTitle($title);
     }
 
-    public function user_posts_all(Request $request)
+    public function user_posts_all()
     {
         //
-        $user = $request->user();
-        $posts = Posts::where('author_id', $user->id)->orderBy('created_at', 'desc')->paginate(5);
-        $title = $user->name;
-        return view('posts/blogposts')->withPosts($posts)->withTitle($title);
+        // $user = $request->user();
+        $posts = Posts::orderBy('created_at', 'desc')->paginate(5);
+        //$title = $user->name;
+        return view('posts/blogposts')->withPosts($posts);
     }
 
     public function user_posts_draft(Request $request)

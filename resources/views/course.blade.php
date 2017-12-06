@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+{{-- <!DOCTYPE html>
 <html>
 <head>
 	<meta charset="utf-8">
@@ -37,33 +37,20 @@
     }
   </style>
 </head>
-<body>
-	<div id="content">
-		<nav class="navbar navbar-default navbar-static-top">
-			<div class="container">
-				<div class="navbar-header">
-					<!-- Branding Image -->
-          <a class="navbar-brand" href="{{ url('/home') }}">
-              Home
-          </a>
-				</div>
-				@if(isset($user_id))
-				<div class="nav navbar-nav navbar-right">
-					<a href="{{ route('losgout') }}"
-  						onclick="event.preventDefault();
-              document.getElementById('logout-form').submit();">
-              <h4 id="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</h4>
-          </a>
+<body> --}}
 
-          <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
-              {{ csrf_field() }}
-          </form>
-				</div>
-				@endif
-			</div>
-		</nav>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+{{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
+{{--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>--}}
 
-		<div class="title m-b-md">Course</div>
+
+@extends('layouts.app')
+@section('content')
+
+	<div id="content"->
+	
+		{{-- <div class="title m-b-md">Course</div> --}}
 		@yield('content')
 
 
@@ -116,5 +103,8 @@
 		@endif
 			{!! $courses->links() !!}
 	</div>
-</body>
-</html>
+
+@endsection
+
+{{-- </body>
+</html> --}}

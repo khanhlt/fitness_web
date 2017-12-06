@@ -13,21 +13,25 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                        <form action="CheckActions/{{$course_id}}" method="post">
+
+                        <form action="{{route('CheckActions')}}" method="post" role="form">
                             {{csrf_field()}}
                             <fieldset>
-                        @foreach($content as $ct)
-                            <table>
-                                <tr>
-                                    <td>{{$ct->content}}<br></td>
-
-                                    <td><input type="checkbox" name="checkbox[]"
-                                                                            value="<?php echo $ct->id;?>" value="checked" /></td>
-
-                                </tr>
-                            </table>
-                            @endforeach
-                            <input type="submit" name="Submit" >
+                                @foreach($content as $ct)
+                                    <table>
+                                        <tr>
+                                            <td>{{$ct->content}}<br></td>
+                                            <?php $done = \App\done_action::where('course_content_id', '=', $ct->id)->first(); ?>
+                                            @if($done != NULL)
+                                                <td>Done</td>
+                                            @elseif( $done == NULL)
+                                                <td><input type="checkbox" name="checkbox[]"
+                                                           value="<?php echo $ct->id;?>" value="checked"/></td>
+                                            @endif
+                                        </tr>
+                                    </table>
+                                @endforeach
+                                <input type="submit" name="Submit">
                             </fieldset>
                         </form>
                     </div>
