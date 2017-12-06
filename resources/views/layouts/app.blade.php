@@ -18,7 +18,7 @@
     <a href="{{ route('home') }}">Home</a>
     <a href="{{ route('course') }}">Courses</a>
     <a href="#trainers">Trainers</a>
-    <a href="{{ route('all-posts') }}">Blog</a>
+    <a href="{{ route('all-posts) }}">Blog</a>
     {{--<a href="#about">About</a>--}}
     <div class="collapse navbar-collapse" id="app-navbar-collapse">
         <!-- Left Side Of Navbar -->
@@ -56,7 +56,23 @@
                                    onclick=";">
                                     My profile
                                 </a>
+                                        <a href="{{ route("profile", auth()->user()->id)}}"
+                                            onclick=";">
+                                            My profile
+                                        </a>
 
+                                        <a href="{{ route("ListRegistion", auth()->user()->id)}}"
+                                           onclick=";">
+                                            My Page
+                                        </a>
+
+                                        <a href="{{ route("listTrainer", auth()->user()->id)}}"
+                                           onclick=";">
+                                            Trainer
+                                        </a>
+
+                                    </li>
+                                </ul>
                             <li>
                                 <a href="{{ url('/new-post') }}">Add new post</a>
                             </li>
