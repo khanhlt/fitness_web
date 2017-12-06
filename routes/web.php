@@ -17,6 +17,8 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('course', 'CourseController@show_all')->name('course');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
 
@@ -30,6 +32,8 @@ Route::post('/updateprofile/{id}', 'UserController@update')->name('updateprofile
 Route::get('/editpassword/{id}', 'UserController@editPassword')->name('editpassword');
 
 Route::post('/updatepassword/{id}', 'UserController@updatePassword')->name('updatepassword');
+
+Route::get('all-posts', 'UserController@user_posts_all')->name('all-posts');
 
 /* blog */
 // check for logged in user
@@ -46,13 +50,13 @@ Route::group(['middleware' => ['auth']], function()
 	// delete post
 	Route::get('delete/{id}', 'PostController@destroy');
 	// display user's all posts
-	Route::get('my-all-posts', 'UserController@user_posts_all');
+	Route::get('all-posts', 'UserController@user_posts_all')->name('all-posts');
 	// display user's drafts
-	 Route::get('my-drafts','UserController@user_posts_draft');
+	Route::get('my-drafts','UserController@user_posts_draft');
 	 // add comment
-	 Route::post('comment/add','PostCommentController@store');
+	Route::post('comment/add','PostCommentController@store');
 	 // delete comment
-	 Route::post('comment/delete/{id}','PostCommentController@destroy');
+	Route::post('comment/delete/{id}','PostCommentController@destroy');
 });
 
 /* display all posts */
@@ -62,7 +66,7 @@ Route::get('/{slug}',['as' => 'post', 'uses' => 'PostController@show'])->where('
 
 
 /* course */
-Route::get('course', 'CourseController@show_all')->name('course');
+
 
 Route::get('course/{id}', 'CourseController@show');
 

@@ -49,7 +49,7 @@
 				</div>
 				@if(isset($user_id))
 				<div class="nav navbar-nav navbar-right">
-					<a href="{{ route('logout') }}"
+				{{-- 	<a href="{{ route('logout') }}"
   						onclick="event.preventDefault();
               document.getElementById('logout-form').submit();">
               <h4 id="logout"><span class="glyphicon glyphicon-log-out"></span>Logout</h4>
@@ -57,7 +57,7 @@
 
           <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               {{ csrf_field() }}
-          </form>
+          </form> --}}
 				</div>
 				@endif
 			</div>
