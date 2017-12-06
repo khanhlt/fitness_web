@@ -13,14 +13,14 @@ class CourseCommentController extends Controller
 {
   public function postComment($id, Request $request)
   {
-  	$course = Course::find($id);
+  	$course = Coursoure::find($id);
 
     $comment = new CourseComment;
   	$comment->course_id = $id;
   	$comment->user_id = Auth::user()->id;
-  	$comment->text = $request->content;
+  	$comment->text = $request->get('content');
   	$comment->save();
 
-  	return redirect("course/$id/")->with('text',$comment->text);
+  	return redirect("course");
   }
 }

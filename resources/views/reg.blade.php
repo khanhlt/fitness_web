@@ -20,5 +20,12 @@
 
         @endforeach
     </div>
+@foreach($data as $data_item)
+{
+{{$data_item}}
+
+}
+
+@endforeach	
 
 @endsection

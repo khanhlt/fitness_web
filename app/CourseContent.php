@@ -12,8 +12,13 @@ class CourseContent extends Model
 	{
 		return $this->belongsTo('App\Course');
 	}
+  
 	public function done_action()
 	{
 		return $this->belongsTo('App\done_action');
+
+	public function content()
+	{
+		return $this->content;
 	}
 }
