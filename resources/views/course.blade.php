@@ -74,9 +74,14 @@
 						<h5 class="panel-title">{!!$course->title!!}</h5>	
 					</div>
 					<div class="panel-body">
-						<h5>Course level : {{$course->level}}</h5>	
+						<h5>Course level : {{ $course->level }}</h5>	
 						<br>
 						@if(isset($user_id))
+						<form action="like/{{$course->id}}" method="get">
+							<button type="submit" class="btn btn-primary glyphicon glyphicon-hand-up">
+								{{ count($course->like) }}</button>
+						</form>
+						<h5> </h5>
 						<h5>Comment ... <span class="glyphicon glyphicon-pencil"></span></h5>
 						<form action="comment/{{$course->id}}" method="post" role="form">
 							<input type="hidden" name="_token" value="{{csrf_token()}}"/>
@@ -93,6 +98,7 @@
 		@else
 			{{'No course!'}}
 		@endif
+			{!! $courses->links() !!}
 	</div>
 </body>
 </html>

@@ -12,4 +12,9 @@ class CourseContent extends Model
 	{
 		return $this->belongsTo('App\Course');
 	}
+
+	public function content()
+	{
+		return $this->content;
+	}
 }

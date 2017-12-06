@@ -84,7 +84,6 @@
 							foreach ($comments as $comment)
 							{
 								echo $comment->text;
-							
 								echo "<br>";
 							}
 								 
