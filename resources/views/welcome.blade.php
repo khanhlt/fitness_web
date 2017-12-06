@@ -137,7 +137,7 @@
                             {{--</div>--}}
                         {{--@endif--}}
 
-
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <style>
     .mySlides {
@@ -153,23 +153,23 @@
         width: 13px;
         padding: 0
     }
+
+    .w3-content {
+        margin-top: 40px;
+    }
+
 </style>
 
 @extends('layouts.app')
 @section('content')
-    <div class="w3-container">
-        <h2>Let make your every is a small progress!</h2>
-        <p>Better health with various fitness courses</p>
-    </div>
 
 
-    <div class="w3-content" style="max-width:800px">
-        <img class="mySlides" src="https://www.w3schools.com/w3css/img_nature_wide.jpg"
+    <div class="w3-content" style="">
+        <img width="800px" height="400px" class="mySlides" src="http://static1.squarespace.com/static/5952024ff5e2317781eda4ff/595ca3cd4c8b036c0f147819/5988384ca803bb82a16cef7e/1502110305136/Untitled+design+%281%29.png?format=1000w"
              style="width:100%">
-        <img class="mySlides" src="https://www.w3schools.com/w3css/img_fjords_wide.jpg"
+        <img width="800px" height="400px" class="mySlides" src="https://trustedbeasts.com/wp-content/uploads/2017/10/alexander-redl-185764-800x400.jpg"
              style="width:100%">
-        <img class="mySlides"
-             src="https://www.w3schools.com/w3css/img_mountains_wide.jpg"
+        <img width="800px" height="400px" class="mySlides" src="https://wwws.fitnessrepublic.com/wp-content/uploads/2015/06/medicine-ball-workout.jpg?x26945"
              style="width:100%">
     </div>
 
