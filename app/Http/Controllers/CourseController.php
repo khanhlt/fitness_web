@@ -30,7 +30,6 @@ class CourseController extends Controller
 
 	public function listcourse(Request $request)
 	{
-		
 		if (($request->ages <= 40) && (($request->weight) >= ($request->height -90)) )
 		{
 			$course = Course::select()->where('level','=','1')->get();
@@ -41,10 +40,17 @@ class CourseController extends Controller
 			if ($request->ages >50 )
 			{
 				$course = Course::select()->where('level','=','2')->get();
-			return view('mypage',['course'=> $course]);
+
+				return view('mypage',['course'=> $course]);
 			} else {
 				$course = Course::select()->where('level','=','3')->get();
-			return view('mypage',['course'=> $course]);
+				return view('mypage',['course'=> $course]);
+        
+// 			return view('mypage',['course'=> $course]);
+// 			} else {
+// 				$course = Course::select()->where('level','=','3')->get();
+// 			return view('mypage',['course'=> $course]);
+
 			}
 		}
 	}

@@ -6,6 +6,7 @@
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
                     <div class="panel-heading">My page</div>
+                    
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
     <style>
@@ -44,6 +45,10 @@
                                     <input class="form-control" name="weight" placeholder="Please Enter Your Weight" type="number" >
                                     <label>My Height </label>
                                     <input class="form-control" name="height" placeholder="Please Enter Your Height"type="number">
+                                </div>
+                                <button type="submit">Submit</button>
+                            </fieldset>
+                        </form>
 
                                 </div>
                                 <button type="submit">Submit</button>

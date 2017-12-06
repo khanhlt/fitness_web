@@ -10,6 +10,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Registration;
 
 Route::get('/', function () {
     return view('layouts/app');
@@ -66,13 +67,22 @@ Route::get('course', 'CourseController@show_all')->name('course');
 
 Route::get('course/{id}', 'CourseController@show');
 
-Route::post('/comment/{id}', 'CourseCommentController@postComment');
 
-Route::get('/like/{id}', 'CourseLikeController@like');
+// Route::post('/comment/{id}', 'CourseCommentController@postComment');
+
+// Route::get('/like/{id}', 'CourseLikeController@like');
 
 Route::post('listcourse','CourseController@listcourse')->name('listcourse');
 
 Route::post('/comment/{id}', 'CourseCommentController@postComment');
+
+Route::get('ListRegistion','RegistrationController@list')->name('ListRegistion');
+
+Route::get('listTrainer','TrainerController@list')->name('listTrainer');
+Route::get('courseTrainer/{id}','TrainerController@course')->name('courseTrainer');
+
+Route::get('CourseContent/{id}','CourseContentController@content');
+Route::post('CheckActions/{id}','CourseContentController@check_action');
 
 Route::post('reg_course','RegistrationController@registration')->name('reg_course');
 
