@@ -13,7 +13,7 @@
 use App\Registration;
 
 Route::get('/', function () {
-    return view('layouts/app');
+    return view('welcome');
 });
 
 Auth::routes();
