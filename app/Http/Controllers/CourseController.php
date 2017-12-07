@@ -39,11 +39,11 @@ class CourseController extends Controller
 		{
 			if ($request->ages >50 )
 			{
-				$course = Course::select()->where('level','=','2')->get();
+				$course = Course::select()->where('level','=','2')->paginate(10);
 
 				return view('mypage',['course'=> $course]);
 			} else {
-				$course = Course::select()->where('level','=','3')->get();
+				$course = Course::select()->where('level','=','3')->paginate(10);
 				return view('mypage',['course'=> $course]);
         
 // 			return view('mypage',['course'=> $course]);
