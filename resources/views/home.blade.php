@@ -50,10 +50,6 @@
                             </fieldset>
                         </form>
 
-                                </div>
-                                <button type="submit">Submit</button>
-                            </fieldset>
-                        </form>
                         <div class="w3-container">
                             <h2>Let make your every is a small progress!</h2>
                             <p>Better health with various fitness courses</p>

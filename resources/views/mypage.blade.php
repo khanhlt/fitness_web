@@ -10,7 +10,7 @@
                 <input type="submit" name="Submit" >
 
                 <table>
-                    <tr><th>Course name</th><th>Done</th></tr>
+                    <tr><th>Course name</th><th>Start</th></tr>
                     @foreach($course as $course_item)
                         <tr><td>{{$course_item->title}}</td><td><input type="checkbox" name="checkbox[]"
                                                                        value="<?php echo $course_item->id;?>" value="checked" /></td>
