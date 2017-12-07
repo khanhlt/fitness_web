@@ -2,44 +2,45 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 use App\Registration;
-use App\Http\Controllers\DateTime;
-
-
 
 class RegistrationController extends Controller
 {
+    public function list()
+    {
+        $userID = Auth::user()->id;
+        $date = date('Y-m-d H:i:s');
+        $registration = Registration::where('user_id', '=', $userID)->get();
+        return view('mypage.registration', ['registration' => $registration], ['userID' => $userID], ['date' => $date]);
+    }
+
     public function registration(Request $request)
-	{
-		$userID = Auth::user()->id;
-		$data = $request->checkbox;
-		$date = date('Y-m-d H:i:s');
+    {
+        $userID = Auth::user()->id;
+        $data = $request->checkbox;
+        $date = date('Y-m-d H:i:s');
+        $cart = array();
+        $cart_deleted = array();
+        foreach ($data as $key) {
+            $registration = Registration::where('course_id', '=', $key)->first();
+            if ($registration != NULL) {
+                array_push($cart_deleted, $registration);
 
-		foreach ($data as $key ) {
-			# code...
 
-			$registration = new registration;
-			$registration = Registration::where('course_id','=',$registration->course_id)->first();
-			if ($registration == NULL) {
+            } else {
+                $registration1 = new registration;
+                $registration1->user_id = $userID;
+                $registration1->course_id = $key;
+                $registration1->time = $date;
+                array_push($cart, $registration1);
+                $registration1->save();
 
-				echo "No";
+            }
+        }
 
-							} else {
-				$registration->user_id = $userID;
-			$registration->course_id = $key;
-			$registration->time = $date;
+        return view('reg', ['cart' => $cart, 'cart_deleted' => $cart_deleted]);
 
-			$registration->save();
-
-							}
-			
-
-			// DB::table('registration')->where('user_id',$id)->insert('course_id',$key);
-		}
-
-		return view('reg',['data'=> $data]);
-		
-	}
+    }
 }

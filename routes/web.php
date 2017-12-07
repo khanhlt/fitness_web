@@ -10,15 +10,21 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+use App\Registration;
 
 Route::get('/', function () {
-    return view('layouts/app');
+    return view('welcome');
 });
 
 Auth::routes();
 
+Route::get('course', 'CourseController@show_all')->name('course');
+
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('listTrainer','TrainerController@list')->name('listTrainer');
+
+Route::get('ListRegistion','RegistrationController@list')->name('ListRegistion');
 
 //user profile
 Route::get('/profile/{id}', 'UserController@show')->name('profile');
@@ -31,29 +37,52 @@ Route::get('/editpassword/{id}', 'UserController@editPassword')->name('editpassw
 
 Route::post('/updatepassword/{id}', 'UserController@updatePassword')->name('updatepassword');
 
+Route::get('all-posts', 'UserController@user_posts_all')->name('all-posts');
+
 /* blog */
 // check for logged in user
-Route::group(['middleware' => ['auth']], function()
-{
-	// show new post form
+//Route::group(['middleware' => ['auth']], function()
+//{
+//	// show new post form
+//	Route::get('new-post', 'PostController@create');
+//	// save new post
+//	Route::post('new-post', 'PostController@store');
+//	// edit post form
+//	Route::get('edit/{slug}', 'PostController@edit');
+//	// update post
+//	Route::post('update', 'PostController@update');
+//	// delete post
+//	Route::get('delete/{id}', 'PostController@destroy');
+//	// display user's all posts
+//	Route::get('all-posts', 'UserController@user_posts_all')->name('all-posts');
+//	// display user's drafts
+//	Route::get('my-drafts','UserController@user_posts_draft');
+//	 // add comment
+//	Route::post('comment/add','PostCommentController@store');
+//	 // delete commE6ent
+//	Route::post('comment/delete/{id}','PostCommentController@destroy');
+//});
+
+
+    //show new post form
 	Route::get('new-post', 'PostController@create');
 	// save new post
 	Route::post('new-post', 'PostController@store');
-	// edit post form
-	Route::get('edit/{slug}', 'PostController@edit');
-	// update post
+    // edit post form
+    Route::get('edit/{slug}', 'PostController@edit');
+    // update post
 	Route::post('update', 'PostController@update');
 	// delete post
 	Route::get('delete/{id}', 'PostController@destroy');
 	// display user's all posts
-	Route::get('my-all-posts', 'UserController@user_posts_all');
+	Route::get('all-posts', 'UserController@user_posts_all')->name('all-posts');
 	// display user's drafts
-	 Route::get('my-drafts','UserController@user_posts_draft');
+	Route::get('my-drafts','UserController@user_posts_draft');
 	 // add comment
-	 Route::post('comment/add','PostCommentController@store');
-	 // delete comment
-	 Route::post('comment/delete/{id}','PostCommentController@destroy');
-});
+	Route::post('comment/add','PostCommentController@store');
+	 // delete commE6ent
+	Route::post('comment/delete/{id}','PostCommentController@destroy');
+
 
 /* display all posts */
 Route::get('user/{id}/posts','UserController@user_posts')->where('id', '[0-9]+');
@@ -62,17 +91,22 @@ Route::get('/{slug}',['as' => 'post', 'uses' => 'PostController@show'])->where('
 
 
 /* course */
-Route::get('course', 'CourseController@show_all')->name('course');
 
 Route::get('course/{id}', 'CourseController@show');
 
-Route::post('/comment/{id}', 'CourseCommentController@postComment');
+Route::get('courseTrainer/{id}','TrainerController@course')->name('courseTrainer');
 
 Route::get('/like/{id}', 'CourseLikeController@like');
 
 Route::post('listcourse','CourseController@listcourse')->name('listcourse');
 
 Route::post('/comment/{id}', 'CourseCommentController@postComment');
+
+
+
+Route::get('CourseContent/{id}','CourseContentController@content')->name('CourseContent');
+
+Route::post('CheckActions','CourseContentController@check_action')->name('CheckActions');
 
 Route::post('reg_course','RegistrationController@registration')->name('reg_course');
 

@@ -14,9 +14,8 @@ class CourseController extends Controller
 {
   public function show_all()
 	{
-		$courses = Course::orderBy('number_like','desc')->paginate(10);
-		$user_id = Auth::user()->id;
-		return view('course')->with(['courses' => $courses, 'user_id' => $user_id]);
+		$courses = Course::orderBy('number_like','desc')->paginate(5);
+		return view('course')->with(['courses' => $courses]);
 	}
 
 	public function show($id)
@@ -30,21 +29,22 @@ class CourseController extends Controller
 
 	public function listcourse(Request $request)
 	{
-		
 		if (($request->ages <= 40) && (($request->weight) >= ($request->height -90)) )
 		{
 			$course = Course::select()->where('level','=','1')->get();
 			return view('mypage',['course'=> $course]);
-			// return view('mypage')->with('course' => $course);
-		} else
+		}
+		else
 		{
 			if ($request->ages >50 )
 			{
 				$course = Course::select()->where('level','=','2')->get();
-			return view('mypage',['course'=> $course]);
-			} else {
+				return view('mypage',['course'=> $course]);
+			}
+			else
+            {
 				$course = Course::select()->where('level','=','3')->get();
-			return view('mypage',['course'=> $course]);
+				return view('mypage',['course'=> $course]);
 			}
 		}
 	}
