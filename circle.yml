@@ -17,8 +17,3 @@ dependencies:
   override:
     - composer install --no-interaction
 
-deployment:
-  production:
-    branch: master
-    commands:
-      - wget https://your-deployment-url/
