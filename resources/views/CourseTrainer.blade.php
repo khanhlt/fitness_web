@@ -18,8 +18,7 @@
                             <tr>
                                 <td>{{$regis->course->title}}</td>
                             </tr>
-                            @endforeach
-
+                        @endforeach
                     </div>
                 </div>
             </div>

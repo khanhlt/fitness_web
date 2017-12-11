@@ -48,7 +48,6 @@
                                 </div>
                             </div>
 
-
                             <div class="form-group">
                                 <div class="col-md-6 col-md-offset-4">
                                     <input type="submit" name='update' class="btn btn-primary" value="Update">

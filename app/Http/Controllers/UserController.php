@@ -78,7 +78,7 @@ class UserController extends Controller
             $user->name = "validate fails";
         }
         if (!Hash::check($request->input('current_password'), $user->password)) {
-            return redirect()->back()->with('alert','Wrong Password!');
+            return redirect()->back()->with('alert','Wrong Current Password!');
         } else {
             $user->password = bcrypt($request->input('new_password'));
             $user->save();
