@@ -23,7 +23,8 @@ class RegistrationController extends Controller
         $date = date('Y-m-d H:i:s');
         $cart = array();
         $cart_deleted = array();
-        foreach ($data as $key) {
+        if ($data != NULL) {
+              foreach ($data as $key) {
             $registration = Registration::where('course_id', '=', $key)->first();
             if ($registration != NULL) {
                 array_push($cart_deleted, $registration);
@@ -39,6 +40,8 @@ class RegistrationController extends Controller
 
             }
         }
+        }
+      
 
         return view('reg', ['cart' => $cart, 'cart_deleted' => $cart_deleted]);
 

@@ -63,6 +63,8 @@ Route::get('all-posts', 'UserController@user_posts_all')->name('all-posts');
 //	Route::post('comment/delete/{id}','PostCommentController@destroy');
 //});
 
+	// mypage
+	Route::get('mypage','CourseController@listcourse')->name('mypage');
 
     //show new post form
 	Route::get('new-post', 'PostController@create');
@@ -111,4 +113,5 @@ Route::post('CheckActions','CourseContentController@check_action')->name('CheckA
 Route::post('reg_course','RegistrationController@registration')->name('reg_course');
 
 Route::post('/comment/{id}', 'CourseCommentController@postComment');
+
 
