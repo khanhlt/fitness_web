@@ -48,60 +48,64 @@
 @extends('layouts.app')
 @section('content')
 
-	<div id="content"->
-	
-		{{-- <div class="title m-b-md">Course</div> --}}
-		@yield('content')
+    <div id="content" ->
+        @yield('content')
+
+        @if($courses != '')
+            @foreach ($courses as $course)
+                <div class="container">
+                    <table>
+                        <tr>
+                            <div class="col-md-8">
+                                <div class="panel panel-success">
+                                    <div class="panel-heading">
+                                        <h5 class="panel-title">
+                                            @if(isset(Illuminate\Support\Facades\Auth::user()->id))
+                                                <a href="course/{{$course->id}}">{!!$course->title!!}</a>
+                                            @else
+                                                <a href="{{route('fail')}}"> {!!$course->title!!} </a>
+                                            @endif
+                                        </h5>
+                                    </div>
+                                    <div class="panel-body">
+                                        <h5>Course level : {{ $course->level }}</h5>
+                                        <br>
+                                        @if(isset(Illuminate\Support\Facades\Auth::user()->id))
+                                            <form action="like/{{$course->id}}" method="get">
+                                                <button type="submit"
+                                                        class="btn btn-primary glyphicon glyphicon-hand-up">
+                                                    {{ count($course->like) }}</button>
+                                            </form>
+
+                                            <h5>Comment ... <span class="glyphicon glyphicon-pencil"></span></h5>
+                                            <form action="comment/{{$course->id}}" method="post" role="form">
+                                                <input type="hidden" name="_token" value="{{csrf_token()}}"/>
+                                                <div class="form-group">
+                                                    <textarea class="form-control" name="content" row="3"></textarea>
+                                                </div>
+                                                <button type="submit" class="btn btn-primary" style="float: right;">
+                                                    Send
+                                                </button>
+                                            </form>
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
 
 
-		@if($courses != '')
-			@foreach ($courses as $course)
-			<div class="container">
-				<table>
-					<tr>
-						
-							<div class="col-md-8">
-								<div class="panel panel-success">
-									<div class="panel-heading">
-										<h5 class="panel-title"><a href="course/{{$course->id}}">
-											 {!!$course->title!!}</a></h5>	
-									</div>
-									<div class="panel-body">
-										<h5>Course level : {{ $course->level }}</h5>	
-										<br>
-										@if(isset(Illuminate\Support\Facades\Auth::user()->id))
-										<form action="like/{{$course->id}}" method="get">
-											<button type="submit" class="btn btn-primary glyphicon glyphicon-hand-up">
-												{{ count($course->like) }}</button>
-										</form>
-										
-										<h5>Comment ... <span class="glyphicon glyphicon-pencil"></span></h5>
-										<form action="comment/{{$course->id}}" method="post" role="form">
-											<input type="hidden" name="_token" value="{{csrf_token()}}"/>
-											<div class="form-group">
-												<textarea class="form-control" name="content" row="3"></textarea>
-											</div>
-											<button type="submit" class="btn btn-primary" style="float: right;">Send</button>
-										</form>
-										@endif
-									</div>
-								</div>	
-							</div>			
-						
-						
-							<div class="col-md-4">
-							<image width=300px height=auto max-height=400px  
-								src="{{$course->image_url}}">
-							</div>
-					</tr>
-				</table>
-			</div>
-			@endforeach	
-		@else
-			{{'No course!'}}
-		@endif
-			{!! $courses->links() !!}
-	</div>
+                            <div class="col-md-4">
+                                <image width=300px height=auto max-height=400px
+                                       src="{{$course->image_url}}">
+                            </div>
+                        </tr>
+                    </table>
+                </div>
+            @endforeach
+        @else
+            {{'No course!'}}
+        @endif
+        {!! $courses->links() !!}
+    </div>
 @endsection
 
 {{-- </body>

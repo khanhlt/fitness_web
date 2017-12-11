@@ -12,7 +12,6 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
 </head>
 <body>
 <div class="topnav">
@@ -52,39 +51,31 @@
                                     {{ csrf_field() }}
                                 </form>
 
-                               
-                                <a href="{{ route("profile", auth()->user()->id)}}"
-                                    onclick=";">
+                                <a href="{{ route("profile", auth()->user()->id)}}" onclick=";">
                                     My profile
                                 </a>
 
-                                <a href="{{ route("ListRegistion", auth()->user()->id)}}"
-                                   onclick=";">
+                                <a href="{{ route("ListRegistion", auth()->user()->id)}}" onclick=";">
                                     My Page
                                 </a>
 
-                                <a href="{{ route("listTrainer", auth()->user()->id)}}"
-                                   onclick=";">
+                                <a href="{{ route("listTrainer", auth()->user()->id)}}" onclick=";">
                                     Trainer
                                 </a>
-                            <li>
-                                <a href="{{ url('/new-post') }}">Add new post</a>
-                            </li>
 
-                            <li>
-                                <a href="{{ url('/user/'.Auth::id().'/posts') }}">My Posts</a>
-                            </li>
+                                <a href="{{ url('/new-post') }}">
+                                    Add new post
+                                </a>
 
-                            </li>
-                                </ul>
-
+                                <a href="{{ url('/user/'.Auth::id().'/posts') }}">
+                                    My Posts
+                                </a>
                             </li>
                         </ul>
                     </li>
-                    @endguest
+            @endguest
         </ul>
     </div>
-
 </div>
 <div id="app">
     @yield('content')
