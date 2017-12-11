@@ -1801,10 +1801,11 @@ pre code {
 }
 
 .container {
+    margin-top: 50px;
     margin-right: auto;
     margin-left: auto;
     padding-left: 15px;
-    padding-right: 15px
+    padding-right: 15px;
 }
 
 .container:after, .container:before {
@@ -7181,3 +7182,6 @@ html, body {
     flex: auto;
     margin-top: 40px;
 }
+
+
+

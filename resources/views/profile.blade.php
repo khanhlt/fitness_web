@@ -10,7 +10,11 @@
                     <div class="panel-body">
                         <form class="form-horizontal">
                             {{ csrf_field() }}
-
+                            @if (session('alert'))
+                                <div class="alert alert-success">
+                                    {{session('alert')}}
+                                </div>
+                            @endif
                             <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
                                 <label for="name" class="col-md-4 control-label">Name</label>
                                 <div class="col-md-6">

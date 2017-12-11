@@ -64,26 +64,29 @@ class UserController extends Controller
         }
         $user->save();
         $landing = 'profile/' . $user->id;
-        return redirect($landing);
+        return redirect($landing)->with('alert', "Edit profile successful!");
     }
 
     public function updatePassword(Request $request, $id) {
         $user = Auth::User();
         $rules = ['current_password' => 'required|string|min:6',
-            'new_password' => 'required|string|min:6|confirmed',
-            'new_password_confirmation' => 'required|string|min:6:same:new_password'
+            'new_password' => 'required|string|min:6',
+            'new_password_confirmation' => 'required|string|min:6'
             ];
         $validator = Validator::make($request->all(), $rules);
         if ($validator->fails()) {
-            $user->name = "validate fails";
+            return redirect()->back()->with('alert','Password must be at least 6 characters long!');
         }
         if (!Hash::check($request->input('current_password'), $user->password)) {
-            return redirect()->back()->with('alert','Wrong Password!');
-        } else {
+            return redirect()->back()->with('alert','Wrong Current Password!');
+        } elseif($request->input('new_password') != $request->input('new_password_confirmation')) {
+            return redirect()->back()->with('alert','Password confirmation failed!');
+        }
+        else {
             $user->password = bcrypt($request->input('new_password'));
             $user->save();
             $landing = 'profile/' . $user->id;
-            return redirect($landing);
+            return redirect($landing)->with('alert','Change password success!');
         }
 
     }

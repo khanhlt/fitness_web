@@ -5,7 +5,7 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
+                    <div class="panel-heading"></div>
 
                     @if ( !$posts->count() )
                         There is no post till now. Login and write a new post now!!!

@@ -1,101 +1,46 @@
-<!DOCTYPE html>
-<html lang="{{ app()->getLocale() }}">
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSRF Token -->
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+
     <meta name="csrf-token" content="{{ csrf_token() }}">
-
-    <title>{{ config('app.name', 'Fitness') }}</title>
-
-    <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
 
+    <title>Fitness</title>
 </head>
 <body>
-<div class="topnav">
-    <a href="{{ route('home') }}">Home</a>
-    <a href="{{ route('course') }}">Courses</a>
-    <a href="{{ route('listTrainer') }}">Trainers</a>
-    <a href="{{ route('all-posts')}}">Blog</a>
-    <div class="collapse navbar-collapse" id="app-navbar-collapse">
-        <!-- Left Side Of Navbar -->
-        <ul class="nav navbar-nav">
-            &nbsp;
-        </ul>
+<main id="cd-main-content2">
+    <section>
+        <div id="app">
+        @yield('content')
+        </div>
+    </section> <!-- cd-intro -->
 
-        <!-- Right Side Of Navbar -->
-        <ul class="nav navbar-nav navbar-right">
-            <!-- Authentication Links -->
-            @guest
-                <li><a href="{{ route('login') }}">Login</a></li>
-                <li><a href="{{ route('register') }}">Register</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true"
-                           aria-haspopup="true">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
+    <header class="cd-header2">
+        <div id="cd-logo">Created by V's members</div>
+        <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+    </header>
+</main>
 
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
 
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
+<nav id="main-nav">
+    <ul>
+        <li><a href="{{ route('home') }}"><span>Home</span></a></li>
+        <li><a href="{{ route('course') }}"><span>Courses</span></a></li>
+        <li><a href="{{ route('listTrainer') }}"><span>Trainers</span></a></li>
+        <li><a href="{{ route('all-posts')}}"><span>Blog</span></a></li>
+        <li><a href="#0"><span>About us</span></a></li>
+    </ul>
+    <a href="#0" class="cd-close-menu">Close<span></span></a>
+</nav>
 
-                               
-                                <a href="{{ route("profile", auth()->user()->id)}}"
-                                    onclick=";">
-                                    My profile
-                                </a>
-
-                                <a href="{{ route("ListRegistion", auth()->user()->id)}}"
-                                   onclick=";">
-                                    My Page
-                                </a>
-
-                                <a href="{{ route("listTrainer", auth()->user()->id)}}"
-                                   onclick=";">
-                                    Trainer
-                                </a>
-                            <li>
-                                <a href="{{ url('/new-post') }}">Add new post</a>
-                            </li>
-
-                            <li>
-                                <a href="{{ url('/user/'.Auth::id().'/posts') }}">My Posts</a>
-                            </li>
-
-                            </li>
-                                </ul>
-
-                            </li>
-                        </ul>
-                    </li>
-                    @endguest
-        </ul>
-    </div>
-
-</div>
-<div id="app">
-    @yield('content')
-</div>
-
-<!-- Scripts -->
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
 </body>
-<footer class="footer">
-    <p>Created by: V's members. Copyright 2017</p>
-    <p>Contact information: <a href="V.com">
-            V.com</a>.</p>
-</footer>
 </html>
