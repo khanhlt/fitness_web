@@ -81,9 +81,9 @@
                                 <div class="class_right" style="width: 60%; float: left; padding: 2%">
                                     <h3>
                                         @if(isset(Illuminate\Support\Facades\Auth::user()->id))
-                                            <a href="course/{{$course->id}}" style="font-size: 25px">{!!$course->title!!}</a>
+                                            <a href="course/{{$course->id}}" style="font-size: 30px">{!!$course->title!!}</a>
                                         @else
-                                            <a href="{{route('fail')}}"> {!!$course->title!!} </a>
+                                            <a href="{{route('fail')}}" style="font-size: 30px"> {!!$course->title!!} </a>
                                         @endif
                                     </h3><br>
                                     <p style="font-weight: bold">Course level : {{ $course->level }}</p><br>

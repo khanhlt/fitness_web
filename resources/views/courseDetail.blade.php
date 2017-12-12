@@ -22,7 +22,7 @@
                     <div class="col-md-12">
                         <div class="panel panel-success">
                             <div class="panel-heading">
-                                <h3 class="">{!!$course->title!!}</h3>
+                                <h3 style="font-size: 25px">{!!$course->title!!}</h3>
                             </div>
                             <div class="panel-body">
                                 <div class="class_left" style="width: 40%; float: left">
