@@ -7178,10 +7178,7 @@ html, body {
 }
 
 .footer {
-<<<<<<< HEAD
-=======
     position: relative;
->>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
     left: 0;
     bottom: 0;
     width: 100%;
@@ -7193,5 +7190,17 @@ html, body {
     height: 50px;
 }
 
-
+/* ======== Hoang ============= */
+.classes_wrapper {
+    padding:4% 0;
+}
+.class_left{
+    width:40%;
+    float:left;
+}
+.class_right{
+    width:60%;
+    float: left;
+    padding: 2%;
+}
 

@@ -13,7 +13,7 @@
                     </tr>
                     @foreach($course as $course_item)
                         <tr>
-                            <td><?php trim($course_item->title,'{}') ?></td>
+                            <td><h1>{{$course_item->title}}</h1></td>
                             <td><input type="checkbox" name="checkbox[]"
                                        value="<?php echo $course_item->id;?>" value="checked"/></td>
                         </tr>
