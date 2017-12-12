@@ -8,7 +8,6 @@
                     <div class="panel-heading">Show us your current age, weight & height. We'll provide appropriate courses for
                         you!
                     </div>
-
                     <meta name="viewport" content="width=device-width, initial-scale=1">
                     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                     <style>

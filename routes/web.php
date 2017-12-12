@@ -40,6 +40,30 @@ Route::post('/updatepassword/{id}', 'UserController@updatePassword')->name('upda
 
 Route::get('all-posts', 'UserController@user_posts_all')->name('all-posts');
 
+
+
+	// mypage
+	Route::get('mypage','CourseController@listcourse')->name('mypage');
+
+    //show new post form
+	Route::get('new-post', 'PostController@create');
+	// save new post
+	Route::post('new-post', 'PostController@store');
+    // edit post form
+    Route::get('edit/{slug}', 'PostController@edit');
+    // update post
+	Route::post('update', 'PostController@update');
+	// delete post
+	Route::get('delete/{id}', 'PostController@destroy');
+	// display user's all posts
+	Route::get('all-posts', 'UserController@user_posts_all')->name('all-posts');
+	// display user's drafts
+	Route::get('my-drafts','UserController@user_posts_draft');
+	 // add comment
+	Route::post('comment/add','PostCommentController@store');
+	 // delete commE6ent
+	Route::post('comment/delete/{id}','PostCommentController@destroy');
+
 /* blog */
 //show new post form
 Route::get('new-post', 'PostController@create');
@@ -59,6 +83,7 @@ Route::get('my-drafts', 'UserController@user_posts_draft');
 Route::post('comment/add', 'PostCommentController@store');
 // delete commE6ent
 Route::post('comment/delete/{id}', 'PostCommentController@destroy');
+
 
 
 /* display all posts */
@@ -88,4 +113,5 @@ Route::post('CheckActions', 'CourseContentController@check_action')->name('Check
 Route::post('reg_course', 'RegistrationController@registration')->name('reg_course');
 
 Route::post('/comment/{id}', 'CourseCommentController@postComment');
+
 

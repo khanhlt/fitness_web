@@ -13,14 +13,17 @@
                     </tr>
                     @foreach($course as $course_item)
                         <tr>
-                            <td>{{$course_item->title}}</td>
+                            <td><?php trim($course_item->title,'{}') ?></td>
                             <td><input type="checkbox" name="checkbox[]"
                                        value="<?php echo $course_item->id;?>" value="checked"/></td>
                         </tr>
 
                     @endforeach
                 </table>
+               
+
             </fieldset>
         </form>
     </div>
+
 @endsection
