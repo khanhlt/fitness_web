@@ -12,8 +12,8 @@
                             @foreach( $posts as $post )
                                 <div class="list-group">
                                     <div class="list-group-item">
-                                        <h3><a href="{{ url('/'.$post->slug) }}">{{ $post->title }}</a>
-                                        </h3>
+                                        <h3><a href="{{ url('/'.$post->slug) }}" style="font-size: 25px; font-family: 'Courier New', Courier, monospace">{{ $post->title }}</a>
+                                        </h3><br>
                                         <p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a
                                                     href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a>
                                         </p>

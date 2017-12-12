@@ -128,7 +128,7 @@ Main components
 #cd-intro {
     position: relative;
     height: 100%;
-    background: url("../images/best-fitness-apps-update_.jpg") no-repeat center center;
+    background: url("../images/best-fitness-apps-update_.jpg") center center;
     background-size: cover;
 }
 
@@ -136,7 +136,7 @@ Main components
     position: absolute;
     width: 90%;
     left: 20%;
-    top: 10%;
+    top: 20%;
     bottom: auto;
     right: auto;
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -156,7 +156,7 @@ Main components
     position: absolute;
     width: 90%;
     left: 25%;
-    top: 20%;
+    top: 30%;
     bottom: auto;
     right: auto;
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -176,7 +176,7 @@ Main components
     position: absolute;
     width: 90%;
     left: 30%;
-    top: 30%;
+    top: 40%;
     bottom: auto;
     right: auto;
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -196,7 +196,7 @@ Main components
     position: absolute;
     width: 90%;
     left: 35%;
-    top: 40%;
+    top: 50%;
     bottom: auto;
     right: auto;
     -webkit-transform: translateX(-50%) translateY(-50%);
@@ -225,10 +225,10 @@ Main components
 
 .cd-header {
     position: absolute;
-    bottom: 0;
+    top: 0;
     left: 0;
     width: 100%;
-    height: 50px;
+    height: 30px;
     z-index: 2;
     background: rgba(58, 57, 63, 0.6);
     -webkit-transition: background 0.2s;
@@ -238,18 +238,17 @@ Main components
 
 @media only screen and (min-width: 768px) {
     .cd-header {
-        height: 80px;
+        height: 50px;
     }
 }
 
 .cd-header2 {
-    position: relative;
-    flex: auto;
-    margin-bottom: auto;
-    bottom: 0;
+    position: absolute;
+    top: 0px;
+    /*bottom: 0;*/
     left: 0;
     width: 100%;
-    height: 80px;
+    height: 30px;
     z-index: 2;
     background: rgba(58, 57, 63, 0.6);
     -webkit-transition: background 0.2s;
@@ -259,7 +258,7 @@ Main components
 
 @media only screen and (min-width: 768px) {
     .cd-header2 {
-        height: 80px;
+        height: 50px;
     }
 }
 
@@ -312,8 +311,8 @@ Main components
     position: absolute;
     right: 0;
     top: 0;
-    height: 50px;
-    line-height: 50px;
+    height: 30px;
+    line-height: 20px;
     padding: 0 .8em;
     text-transform: uppercase;
     font-weight: bold;
@@ -388,8 +387,8 @@ Main components
     position: absolute;
     right: 200px;
     top: 0;
-    height: 50px;
-    line-height: 25px;
+    height: 20px;
+    line-height: 0px;
     padding: 0.8em;
     text-transform: uppercase;
     font-weight: bold;
@@ -462,8 +461,8 @@ Main components
     position: absolute;
     right: 200px;
     top: 0;
-    height: 50px;
-    line-height: 80px;
+    height: 30px;
+    line-height: 30px;
     padding: 0 .8em;
     text-transform: uppercase;
     font-weight: bold;
@@ -476,8 +475,8 @@ Main components
     position: absolute;
     right: 300px;
     top: 0;
-    height: 50px;
-    line-height: 80px;
+    height: 30px;
+    line-height: 30px;
     padding: 0 .8em;
     text-transform: uppercase;
     font-weight: bold;
@@ -717,7 +716,7 @@ Main components
     white-space: nowrap;
 }
 
-#main-nav-one .cd-close-menu::before, #main-nav .cd-close-menu::after {
+#main-nav-one .cd-close-menu::before, #main-nav-one .cd-close-menu::after {
     content: '';
     display: inline-block;
     position: absolute;
@@ -811,4 +810,28 @@ Main components
     -webkit-transition-delay: 0s;
     -moz-transition-delay: 0s;
     transition-delay: 0s;
+}
+
+a:link {
+     color: #1c80e2;
+     background-color: transparent;
+     text-decoration: none;
+}
+
+a:visited {
+    color: #c4b5d6;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #092f4d;
+    background-color: transparent;
+    text-decoration: none;
+}
+
+a:active {
+    color: yellow;
+    background-color: transparent;
+    text-decoration: none;
 }

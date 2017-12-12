@@ -20,7 +20,7 @@
         <a3>you have to start</a3>
         <a4>to be great!</a4>
         <header class="cd-header">
-            <div id="cd-logo">Created by V's members</div>
+            <div id="cd-logo"></div>
             <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
             @guest
                 <a class="cd-menu-one" href="{{ route('login') }}">Log in</a>
@@ -29,11 +29,9 @@
                     <a class="cd-menu-trigger-one" href="#main-nav-one">{{Auth::user()->name}}<span></span></a>
                     @endguest
         </header>
-        <div class="cd-blurred-bg"></div>
     </section> <!-- cd-intro -->
 </main>
 
-<div class="cd-shadow-layer"></div>
 
 <nav id="main-nav">
     <ul>
