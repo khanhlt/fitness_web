@@ -4,6 +4,7 @@
 {{--* Date: 12/1/17--}}
 {{--* Time: 11:05 PM--}}
 {{--*/--}}
+
 @extends('layouts.app')
 @section('title')
     Edit Post
@@ -21,13 +22,20 @@
                 "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
                 "save table contextmenu directionality emoticons template paste textcolor jbimages"
             ],
-            content_css: "css/content.css",
+            content_css: "css/app.css",
             toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons jbimages",
             relative_urls: false
         });
     </script>
-    <div class="container">
+
+    <div class="container" style="height: 470px">
         <div class="row">
+            {{ csrf_field() }}
+            @if (session('alert'))
+                <div class="alert alert-success">
+                    {{session('alert')}}
+                </div>
+            @endif
             <form method="post" action='{{ url("/update") }}'>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="post_id" value="{{ $post->id }}{{ old('post_id') }}">
