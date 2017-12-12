@@ -31,22 +31,29 @@ class CourseController extends Controller
 	{
 		if (($request->ages <= 40) && (($request->weight) >= ($request->height -90)) )
 		{
-			$course = Course::select()->where('level','=','1')->get();
-			return view('mypage',['course'=> $course]);
+			$course = Course::where('level','=','1')->paginate(7);
+			$course->setPath('mypage');
+			// return view('mypage',['course'=> $course]);
 		}
 		else
 		{
 			if ($request->ages >50 )
 			{
-				$course = Course::select()->where('level','=','2')->get();
-				return view('mypage',['course'=> $course]);
+
+				$course = Course::where('level','=','2')->paginate(7);
+				$course->setPath('mypage');
+				// return view('mypage',['course'=> $course]);
 			}
 			else
             {
-				$course = Course::select()->where('level','=','3')->get();
-				return view('mypage',['course'=> $course]);
+				
+
+				$course = Course::where('level','=','3')->paginate(7);
+				$course->setPath('mypage');
+				// return view('mypage',['course'=> $course]);
 			}
 		}
+		return view('mypage',['course'=> $course]);
 	}
 
 	public function fail()
