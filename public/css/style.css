@@ -312,8 +312,8 @@ Main components
     right: 0;
     top: 0;
     height: 30px;
-    line-height: 20px;
-    padding: 0 .8em;
+    line-height: 0px;
+    padding: 0.8em;
     text-transform: uppercase;
     font-weight: bold;
     font-size: 14px;
