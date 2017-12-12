@@ -30,7 +30,8 @@
                             </div>
 
                             <div class="list-group-item"
-                                 style="height: auto; border-left: hidden; border-right: hidden; border-bottom: hidden">
+                                 style="height: auto; border-left: hidden; border-right: hidden; border-bottom: hidden;
+                                  border-top-width: medium; border-top-style: dashed">
                                 <article>
                                     {!! str_limit($post->body, $limit = 1500, $end = '....... <a href='.url("/".$post->slug).'>Read More</a>') !!}
                                 </article>
