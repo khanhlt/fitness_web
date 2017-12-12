@@ -1,391 +1,70 @@
-<<<<<<< HEAD
-@extends('layouts.app')
-<html lang="{{ app()->getLocale() }}">
+<!doctype html>
+<html lang="en" class="no-js">
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
+    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+    <script src="js/modernizr.js"></script> <!-- Modernizr -->
 
     <title>Fitness</title>
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-    <!-- Styles -->
-    <style>
-    </style>
 </head>
 <body>
-<div class="topnav">
-    <a href="{{ route('home') }}">Home</a>
-    <a href="#news">Courses</a>
-    <a href="#contact">Trainers</a>
-    <a href="{{ route('all-posts') }}">Blog</a>
-    <a href="#about">About</a>
-    <div class="collapse navbar-collapse" id="app-navbar-collapse">
-        <!-- Left Side Of Navbar -->
-        <ul class="nav navbar-nav">
-            &nbsp;
-        </ul>
-
-        <!-- Right Side Of Navbar -->
-        <ul class="nav navbar-nav navbar-right">
-            <!-- Authentication Links -->
-            @guest
-                <li><a href="{{ route('login') }}">Login</a></li>
-                <li><a href="{{ route('register') }}">Register</a></li>
-                @else
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="true"
-                           aria-haspopup="true">
-                            {{ Auth::user()->name }} <span class="caret"></span>
-                        </a>
-
-                        <ul class="dropdown-menu">
-                            <li>
-                                <a href="{{ route('logout') }}"
-                                   onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                    Logout
-                                </a>
-
-                                <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                                      style="display: none;">
-                                    {{ csrf_field() }}
-                                </form>
-
-                                <a href="{{ route("profile", auth()->user()->id)}}"
-                                   onclick=";">
-                                    My profile
-                                </a>
-
-                            <li>
-                                <a href="{{ url('/new-post') }}">Add new post</a>
-                            </li>
-
-                            <li>
-                                <a href="{{ url('/user/'.Auth::id().'/posts') }}">My Posts</a>
-                            </li>
-                            </li>
-                        </ul>
-                    </li>
-                    @endguest
-        </ul>
-    </div>
+<div class="cd-header">
+    <div id="cd-logo"></div>
+    <a class="cd-menu-trigger" href="#main-nav" style="color: white">Menu<span></span></a>
+    @guest
+        <a class="cd-menu-one" href="{{ route('login') }}" style="color: white">Log in</a>
+        <a class="cd-menu-two" href="{{ route('register') }}" style="color: white">Register</a>
+        @else
+            <a class="cd-menu-trigger-one" href="#main-nav-one" style="color: white">{{Auth::user()->name}}<span></span></a>
+            @endguest
 </div>
-<div class="flex-center position-ref full-height">
+<main id="cd-main-content">
+    <section id="cd-intro">
+        <a1>You don't have to be</a1>
+        <a2>great to start, but</a2>
+        <a3>you have to start</a3>
+        <a4>to be great!</a4>
+    </section> <!-- cd-intro -->
+</main>
 
 
-    {{--<div class="content">--}}
-    {{--<div class="title m-b-md">--}}
-    {{--Fitness--}}
-    {{--</div>--}}
+<nav id="main-nav">
+    <ul>
+        <li><a href="{{ route('home') }}"><span>Home</span></a></li>
+        <li><a href="{{ route('course') }}"><span>Courses</span></a></li>
+        <li><a href="{{ route('listTrainer') }}"><span>Trainers</span></a></li>
+        <li><a href="{{ route('all-posts')}}"><span>Blog</span></a></li>
+        <li><a href="#0"><span>About us</span></a></li>
+    </ul>
+    <a href="#0" class="cd-close-menu">Close<span></span></a>
+</nav>
 
-    {{--<div class="links">--}}
-    {{--<a href="{{ route('course') }}">Course</a>--}}
-    {{--<a href="https://laracasts.com">Blog</a>--}}
-    {{--<a href="https://github.com/laravel/laravel">GitHub</a>--}}
-    {{--</div>--}}
-    {{--</div>--}}
-    <div class="w3-container">
-        <div class="row">
-            <div class="col-md-8 col-md-offset-2">
-                <div class="panel panel-default">
-                    <div class="panel-body">
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
-                            </div>
-                        @endif
-                        <div class="w3-container">
-                            <h2>Let make your every is a small progress!</h2>
-                            <p>Better health with various fitness courses</p>
-                        </div>
+@if(Auth::user())
+    <nav id="main-nav-one">
+        <ul>
+            <li><a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();document.getElementById('logout-form').submit();"><span>Log out</span></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                      style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+            <li><a href="{{ route("profile", auth()->user()->id) }}"><span>My profile</span></a></li>
+            <li><a href="{{ route("ListRegistion", auth()->user()->id) }}"><span>My page</span></a></li>
+            <li><a href="{{ url('/new-post') }}"><span>Add new post</span></a></li>
+            <li><a href="{{ url('/user/'.Auth::id().'/posts') }}"><span>My posts</span></a></li>
+        </ul>
+        <a href="#0" class="cd-close-menu">Close<span></span></a>
+    </nav>
+@endif
 
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="js/main.js"></script> <!-- Resource jQuery -->
 
-                        <div class="w3-content" style="max-width:800px">
-                            <img class="mySlides" src="https://www.w3schools.com/w3css/img_nature_wide.jpg"
-                                 style="width:100%">
-                            <img class="mySlides" src="https://www.w3schools.com/w3css/img_fjords_wide.jpg"
-                                 style="width:100%">
-                            <img class="mySlides" src="https://www.w3schools.com/w3css/img_mountains_wide.jpg"
-                                 style="width:100%">
-                        </div>
-
-                        <div class="w3-center">
-                            <div class="w3-section">
-                                <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev</button>
-                                <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯</button>
-                            </div>
-                            <button class="w3-button demo" onclick="currentDiv(1)">1</button>
-                            <button class="w3-button demo" onclick="currentDiv(2)">2</button>
-                            <button class="w3-button demo" onclick="currentDiv(3)">3</button>
-                        </div>
-
-                        <script>
-                            var slideIndex = 1;
-                            showDivs(slideIndex);
-
-                            function plusDivs(n) {
-                                showDivs(slideIndex += n);
-                            }
-
-                            function currentDiv(n) {
-                                showDivs(slideIndex = n);
-                            }
-
-                            function showDivs(n) {
-                                var i;
-                                var x = document.getElementsByClassName("mySlides");
-                                var dots = document.getElementsByClassName("demo");
-                                if (n > x.length) {
-                                    slideIndex = 1
-                                }
-                                if (n < 1) {
-                                    slideIndex = x.length
-                                }
-                                for (i = 0; i < x.length; i++) {
-                                    x[i].style.display = "none";
-                                }
-                                for (i = 0; i < dots.length; i++) {
-                                    dots[i].className = dots[i].className.replace(" w3-red", "");
-                                }
-                                x[slideIndex - 1].style.display = "block";
-                                dots[slideIndex - 1].className += " w3-red";
-                            }
-                        </script>
-                    </div>
-                </div>
-            </div>
-=======
-{{--<!doctype html>--}}
-{{--<html lang="{{ app()->getLocale() }}">--}}
-{{--<head>--}}
-    {{--<meta charset="utf-8">--}}
-    {{--<meta http-equiv="X-UA-Compatible" content="IE=edge">--}}
-    {{--<meta name="viewport" content="width=device-width, initial-scale=1">--}}
-    {{--<meta name="viewport" content="width=device-width, initial-scale=1">--}}
-    {{--<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">--}}
-
-    {{--<title>Fitness</title>--}}
-
-    {{--<!-- Fonts -->--}}
-    {{--<link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">--}}
-
-    {{--<!-- Styles -->--}}
-    {{--<style>--}}
-        {{--body {--}}
-            {{--margin: 0;--}}
-        {{--}--}}
-
-        {{--.topnav {--}}
-            {{--overflow: hidden;--}}
-            {{--background-color: #c1e2de;--}}
-        {{--}--}}
-
-        {{--.topnav a {--}}
-            {{--float: left;--}}
-            {{--color: #984513;--}}
-            {{--text-align: center;--}}
-            {{--padding: 14px 16px;--}}
-            {{--text-decoration: none;--}}
-            {{--font-size: 17px;--}}
-            {{--font-weight: bold;--}}
-        {{--}--}}
-
-        {{--.topnav a:hover {--}}
-            {{--background-color: #ddd;--}}
-            {{--color: #000000;--}}
-        {{--}--}}
-
-        {{--.mySlides {--}}
-            {{--display: none--}}
-        {{--}--}}
-
-        {{--.w3-left, .w3-right, .w3-badge {--}}
-            {{--cursor: pointer--}}
-        {{--}--}}
-
-        {{--.w3-badge {--}}
-            {{--height: 13px;--}}
-            {{--width: 13px;--}}
-            {{--padding: 0--}}
-        {{--}--}}
-
-        {{--html, body {--}}
-            {{--background-color: #fff;--}}
-            {{--color: #636b6f;--}}
-            {{--font-family: 'Raleway', sans-serif;--}}
-            {{--font-weight: 100;--}}
-            {{--height: 100vh;--}}
-            {{--margin: 0;--}}
-        {{--}--}}
-
-        {{--.full-height {--}}
-            {{--height: 100vh;--}}
-        {{--}--}}
-
-        {{--.flex-center {--}}
-            {{--align-items: center;--}}
-            {{--display: flex;--}}
-            {{--justify-content: center;--}}
-        {{--}--}}
-
-        {{--.position-ref {--}}
-            {{--position: relative;--}}
-        {{--}--}}
-
-        {{--.top-right {--}}
-            {{--position: absolute;--}}
-            {{--right: 10px;--}}
-            {{--top: 18px;--}}
-        {{--}--}}
-
-        {{--.content {--}}
-            {{--text-align: center;--}}
-        {{--}--}}
-
-        {{--.title {--}}
-            {{--font-size: 84px;--}}
-        {{--}--}}
-
-        {{--.links > a {--}}
-            {{--color: #636b6f;--}}
-            {{--padding: 0 25px;--}}
-            {{--font-size: 12px;--}}
-            {{--font-weight: 600;--}}
-            {{--letter-spacing: .1rem;--}}
-            {{--text-decoration: none;--}}
-            {{--text-transform: uppercase;--}}
-        {{--}--}}
-
-        {{--.m-b-md {--}}
-            {{--margin-bottom: 30px;--}}
-        {{--}--}}
-    {{--</style>--}}
-{{--</head>--}}
-{{--<body>--}}
-{{--<div class="topnav">--}}
-    {{--<a href="#home">Home</a>--}}
-    {{--<a href="#news">Courses</a>--}}
-    {{--<a href="#contact">Trainers</a>--}}
-    {{--<a href="#contact">Blog</a>--}}
-    {{--<a href="#about">About</a>--}}
-    {{--@if (Route::has('login'))--}}
-        {{--<div class="top-right links">--}}
-            {{--@auth--}}
-                {{--<a href="{{ url('/home') }}">Home</a>--}}
-                {{--@else--}}
-                    {{--<a href="{{ route('login') }}">Login</a>--}}
-                    {{--<a href="{{ route('register') }}">Register</a>--}}
-                    {{--@endauth--}}
-        {{--</div>--}}
-    {{--@endif--}}
-{{--</div>--}}
-
-{{--<div class="flex-center position-ref full-height">--}}
-
-
-    {{--<div class="w3-container">--}}
-        {{--<div class="row">--}}
-            {{--<div class="col-md-8 col-md-offset-2">--}}
-                {{--<div class="panel panel-default">--}}
-                    {{--<div class="panel-body">--}}
-                        {{--@if (session('status'))--}}
-                            {{--<div class="alert alert-success">--}}
-                                {{--{{ session('status') }}--}}
-                            {{--</div>--}}
-                        {{--@endif--}}
-
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<style>
-    .mySlides {
-        display: none
-    }
-
-    .w3-left, .w3-right, .w3-badge {
-        cursor: pointer
-    }
-
-    .w3-badge {
-        height: 13px;
-        width: 13px;
-        padding: 0
-    }
-
-    .w3-content {
-        margin-top: 40px;
-    }
-
-</style>
-
-@extends('layouts.app')
-@section('content')
-
-
-    <div class="w3-content" style="">
-        <img width="800px" height="400px" class="mySlides" src="http://static1.squarespace.com/static/5952024ff5e2317781eda4ff/595ca3cd4c8b036c0f147819/5988384ca803bb82a16cef7e/1502110305136/Untitled+design+%281%29.png?format=1000w"
-             style="width:100%">
-        <img width="800px" height="400px" class="mySlides" src="https://trustedbeasts.com/wp-content/uploads/2017/10/alexander-redl-185764-800x400.jpg"
-             style="width:100%">
-        <img width="800px" height="400px" class="mySlides" src="https://wwws.fitnessrepublic.com/wp-content/uploads/2015/06/medicine-ball-workout.jpg?x26945"
-             style="width:100%">
-    </div>
-
-    <div class="w3-center">
-        <div class="w3-section">
-            <button class="w3-button w3-light-grey" onclick="plusDivs(-1)">❮ Prev
-            </button>
-            <button class="w3-button w3-light-grey" onclick="plusDivs(1)">Next ❯
-            </button>
->>>>>>> 77dddf63d135af3733d943097e93b002ddef9373
-        </div>
-        <button class="w3-button demo" onclick="currentDiv(1)">1</button>
-        <button class="w3-button demo" onclick="currentDiv(2)">2</button>
-        <button class="w3-button demo" onclick="currentDiv(3)">3</button>
-    </div>
-    <script>
-        var slideIndex = 1;
-        showDivs(slideIndex);
-
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
-
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
-        }
-
-        function showDivs(n) {
-            var i;
-            var x = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
-            if (n > x.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = x.length
-            }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" w3-red", "");
-            }
-            x[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " w3-red";
-        }
-    </script>
-@endsection
-                {{----}}
-                    {{--</div>--}}
-                {{--</div>--}}
-            {{--</div>--}}
-        {{--</div>--}}
-    {{--</div>--}}
-{{--</div>--}}
-{{--</body>--}}
-{{--</html>--}}
+</body>
+</html>

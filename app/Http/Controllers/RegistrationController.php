@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Registration;
+use App\Course;
 
 class RegistrationController extends Controller
 {
@@ -23,10 +24,11 @@ class RegistrationController extends Controller
         $date = date('Y-m-d H:i:s');
         $cart = array();
         $cart_deleted = array();
-        foreach ($data as $key) {
+        if ($data != NULL) {
+              foreach ($data as $key) {
             $registration = Registration::where('course_id', '=', $key)->first();
             if ($registration != NULL) {
-                array_push($cart_deleted, $registration);
+                array_push($cart_deleted, $registration->course->title);
 
 
             } else {
@@ -34,11 +36,15 @@ class RegistrationController extends Controller
                 $registration1->user_id = $userID;
                 $registration1->course_id = $key;
                 $registration1->time = $date;
-                array_push($cart, $registration1);
+                array_push($cart, $registration1->course->title);
                 $registration1->save();
 
             }
         }
+        }
+        
+        
+      
 
         return view('reg', ['cart' => $cart, 'cart_deleted' => $cart_deleted]);
 

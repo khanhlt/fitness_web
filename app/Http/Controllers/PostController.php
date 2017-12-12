@@ -49,7 +49,7 @@ class PostController extends Controller
             $message = 'Post published successfully';
         }
         $post->save();
-        return redirect('edit/' . $post->slug)->withMessage($message);
+        return redirect('edit/' . $post->slug)->with('alert', $message);
     }
 
     public function show($slug)
@@ -99,7 +99,8 @@ class PostController extends Controller
 
         // return all posts of user
         $user = $request->user();
-        $landing = 'user/'.$user->id.'/posts';
+//        $landing = 'user/'.$user->id.'/posts';
+        $landing = '/'.$slug;
         return redirect($landing)->withMessage($message);
     }
 

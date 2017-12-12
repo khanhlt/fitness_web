@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 470px">
         <form action="{{route('reg_course')}}" method="post">
             {{csrf_field()}}
             <fieldset>
@@ -13,13 +13,15 @@
                     </tr>
                     @foreach($course as $course_item)
                         <tr>
-                            <td>{{$course_item->title}}</td>
+                            <td><?php trim($course_item->title,'{}') ?></td>
                             <td><input type="checkbox" name="checkbox[]"
                                        value="<?php echo $course_item->id;?>" value="checked"/></td>
                         </tr>
 
                     @endforeach
                 </table>
+               
+
             </fieldset>
         </form>
 <<<<<<< HEAD
@@ -27,4 +29,5 @@
 =======
 >>>>>>> 77dddf63d135af3733d943097e93b002ddef9373
     </div>
+
 @endsection

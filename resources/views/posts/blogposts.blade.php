@@ -5,8 +5,6 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Dashboard</div>
-
                     @if ( !$posts->count() )
                         There is no post till now. Login and write a new post now!!!
                     @else
@@ -14,8 +12,9 @@
                             @foreach( $posts as $post )
                                 <div class="list-group">
                                     <div class="list-group-item">
-                                        <h3><a href="{{ url('/'.$post->slug) }}">{{ $post->title }}</a>
-                                        </h3>
+                                        <h3><a href="{{ url('/'.$post->slug) }}"
+                                               style="font-size: 25px; font-family: 'Courier New', Courier, monospace">{{ $post->title }}</a>
+                                        </h3><br>
                                         <p>{{ $post->created_at->format('M d,Y \a\t h:i a') }} By <a
                                                     href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a>
                                         </p>
@@ -33,8 +32,5 @@
                 </div>
             </div>
         </div>
-<<<<<<< HEAD
     </div>
-=======
->>>>>>> 77dddf63d135af3733d943097e93b002ddef9373
 @endsection

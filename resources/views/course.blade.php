@@ -44,6 +44,20 @@
 {{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
 {{--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>--}}
 
+<style>
+    .classes_wrapper {
+        padding:4% 0;
+    }
+    .class_left{
+        width:40%;
+        float:left;
+    }
+    .class_right{
+        width:60%;
+        float: left;
+        padding: 2%;
+    }
+</style>
 
 @extends('layouts.app')
 @section('content')
@@ -54,22 +68,22 @@
         @if($courses != '')
             @foreach ($courses as $course)
                 <div class="container">
-                    <table>
-                        <tr>
-                            <div class="col-md-8">
-                                <div class="panel panel-success">
-                                    <div class="panel-heading">
-                                        <h5 class="panel-title">
-                                            @if(isset(Illuminate\Support\Facades\Auth::user()->id))
-                                                <a href="course/{{$course->id}}">{!!$course->title!!}</a>
-                                            @else
-                                                <a href="{{route('fail')}}"> {!!$course->title!!} </a>
-                                            @endif
-                                        </h5>
-                                    </div>
-                                    <div class="panel-body">
-                                        <h5>Course level : {{ $course->level }}</h5>
-                                        <br>
+                    <div class="classes_wrapper">
+                        <div class="row class_box">
+                            <div class="col-md-12">
+                                <div class="class_left">
+                                    <img src="{{$course->image_url}}" class="img-responsive" alt=""/>
+                                </div>
+                                <div class="class_right">
+                                    <h3>
+                                        @if(isset(Illuminate\Support\Facades\Auth::user()->id))
+                                            <a href="course/{{$course->id}}">{!!$course->title!!}</a>
+                                        @else
+                                            <a href="{{route('fail')}}"> {!!$course->title!!} </a>
+                                        @endif
+                                    </h3>
+                                    <p>Course level : {{ $course->level }}</p>
+                                    <div class="formal">
                                         @if(isset(Illuminate\Support\Facades\Auth::user()->id))
                                             <form action="like/{{$course->id}}" method="get">
                                                 <button type="submit"
@@ -91,14 +105,8 @@
                                     </div>
                                 </div>
                             </div>
-
-
-                            <div class="col-md-4">
-                                <image width=300px height=auto max-height=400px
-                                       src="{{$course->image_url}}">
-                            </div>
-                        </tr>
-                    </table>
+                        </div>
+                    </div>
                 </div>
             @endforeach
         @else

@@ -4,7 +4,11 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+<<<<<<< HEAD
     "hash": "673c0de32bebf900a2fd468a8f347376",
+=======
+    "hash": "58078264639cbf69e27c48b53218b120",
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
     "content-hash": "854284e9594ad5eaf8f6593bd6e453e6",
     "packages": [
         {
@@ -409,16 +413,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v5.5.23",
+            "version": "v5.5.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "cb8ec95aa65fbaeeaf94026c8a9f04bb97c13777"
+                "reference": "06135405bb1f736dac5e9529ed1541fc446c9c0f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/cb8ec95aa65fbaeeaf94026c8a9f04bb97c13777",
-                "reference": "cb8ec95aa65fbaeeaf94026c8a9f04bb97c13777",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/06135405bb1f736dac5e9529ed1541fc446c9c0f",
+                "reference": "06135405bb1f736dac5e9529ed1541fc446c9c0f",
                 "shasum": ""
             },
             "require": {
@@ -539,10 +543,14 @@
                 "laravel"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-12-04 14:19:08"
 =======
             "time": "2017-12-04T14:19:08+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-12-07 01:28:21"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "laravel/tinker",
@@ -1386,10 +1394,14 @@
             "description": "Symfony Console Component",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-12-02 18:20:11"
 =======
             "time": "2017-12-02T18:20:11+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-12-02 18:20:11"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "symfony/css-selector",
@@ -1562,10 +1574,14 @@
             "description": "Symfony EventDispatcher Component",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-11-09 17:30:28"
 =======
             "time": "2017-11-09T17:30:28+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-11-09 17:30:28"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "symfony/finder",
@@ -1757,10 +1773,14 @@
             "description": "Symfony HttpKernel Component",
             "homepage": "https://symfony.com",
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-12-04 23:05:00"
 =======
             "time": "2017-12-04T23:05:00+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-12-04 23:05:00"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2310,10 +2330,14 @@
                 "parser"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-07-22 10:58:02"
 =======
             "time": "2017-07-22T10:58:02+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-07-22 10:58:02"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "doctrine/cache",
@@ -2388,10 +2412,14 @@
                 "caching"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-08-25 07:02:50"
 =======
             "time": "2017-08-25T07:02:50+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-08-25 07:02:50"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "doctrine/collections",
@@ -2459,10 +2487,14 @@
                 "iterator"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-07-22 10:37:32"
 =======
             "time": "2017-07-22T10:37:32+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-07-22 10:37:32"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "doctrine/common",
@@ -2536,10 +2568,14 @@
                 "spl"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-08-31 08:43:38"
 =======
             "time": "2017-08-31T08:43:38+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-08-31 08:43:38"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "doctrine/dbal",
@@ -2613,10 +2649,14 @@
                 "queryobject"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-11-19 13:38:54"
 =======
             "time": "2017-11-19T13:38:54+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-11-19 13:38:54"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "doctrine/instantiator",
@@ -2671,10 +2711,14 @@
                 "instantiate"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-07-22 11:58:36"
 =======
             "time": "2017-07-22T11:58:36+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-07-22 11:58:36"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "filp/whoops",
@@ -3324,10 +3368,14 @@
                 "xunit"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-12-06 09:29:45"
 =======
             "time": "2017-12-06T09:29:45+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-12-06 09:29:45"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "phpunit/php-file-iterator",
@@ -3598,10 +3646,14 @@
                 "xunit"
             ],
 <<<<<<< HEAD
+<<<<<<< HEAD
             "time": "2017-12-06 09:42:03"
 =======
             "time": "2017-12-06T09:42:03+00:00"
 >>>>>>> e3ef32327ce33fb2fe4112d933d8b850917879f3
+=======
+            "time": "2017-12-06 09:42:03"
+>>>>>>> c0472e0b3796a8fc2c0e84a6c4e50e0c13111de8
         },
         {
             "name": "phpunit/phpunit-mock-objects",
