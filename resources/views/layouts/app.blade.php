@@ -7,10 +7,13 @@
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
     <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
     <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script src="js/main.js"></script> <!-- Resource jQuery -->
+    <script src="{{ asset('js/app.js') }}"></script>
 
     <title>Fitness</title>
 </head>
@@ -18,14 +21,21 @@
 <main id="cd-main-content2">
     <section>
         <div id="app">
-        @yield('content')
+            @yield('content')
         </div>
     </section> <!-- cd-intro -->
 
     <header class="cd-header2">
         <div id="cd-logo">Created by V's members</div>
         <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+        @guest
+            <a class="cd-menu-one" href="{{ route('login') }}">Log in</a>
+            <a class="cd-menu-two" href="{{ route('register') }}">Register</a>
+            @else
+                <a class="cd-menu-trigger-one" href="#main-nav-one">{{Auth::user()->name}}<span></span></a>
+                @endguest
     </header>
+    <div class="cd-blurred-bg"></div>
 </main>
 
 
@@ -39,8 +49,23 @@
     </ul>
     <a href="#0" class="cd-close-menu">Close<span></span></a>
 </nav>
-
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-<script src="js/main.js"></script> <!-- Resource jQuery -->
+@if(Auth::user())
+    <nav id="main-nav-one">
+        <ul>
+            <li><a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();document.getElementById('logout-form').submit();"><span>Log out</span></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                      style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+            <li><a href="{{ route("profile", auth()->user()->id) }}"><span>My profile</span></a></li>
+            <li><a href="{{ route("ListRegistion", auth()->user()->id) }}"><span>My page</span></a></li>
+            <li><a href="{{ url('/new-post') }}"><span>Add new post</span></a></li>
+            <li><a href="{{ url('/user/'.Auth::id().'/posts') }}"><span>My posts</span></a></li>
+        </ul>
+        <a href="#0" class="cd-close-menu">Close<span></span></a>
+    </nav>
+@endif
 </body>
 </html>

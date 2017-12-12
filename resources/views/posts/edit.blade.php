@@ -4,6 +4,7 @@
 {{--* Date: 12/1/17--}}
 {{--* Time: 11:05 PM--}}
 {{--*/--}}
+
 @extends('layouts.app')
 @section('title')
     Edit Post
@@ -26,8 +27,15 @@
             relative_urls: false
         });
     </script>
-    <div class="container">
+
+    <div class="container" style="height: 470px">
         <div class="row">
+            {{ csrf_field() }}
+            @if (session('alert'))
+                <div class="alert alert-success">
+                    {{session('alert')}}
+                </div>
+            @endif
             <form method="post" action='{{ url("/update") }}'>
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
                 <input type="hidden" name="post_id" value="{{ $post->id }}{{ old('post_id') }}">
@@ -53,4 +61,5 @@
             </form>
         </div>
     </div>
+
 @endsection

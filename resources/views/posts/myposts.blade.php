@@ -5,7 +5,6 @@
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading"></div>
 
                     @if ( !$posts->count() )
                         There is no post till now. Login and write a new post now!!!
@@ -19,7 +18,7 @@
                                             {{ $post->created_at->format('M d,Y \a\t h:i a') }} By
                                             <a href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a>
                                         </div>
-                                        <div class="col-md-offset-10">
+                                        <div class="col-md-offset-6">
                                             @if($post->active == '1')
                                                 <input class="btn" >
                                                 <a href="{{ url('edit/'.$post->slug)}}">Edit Post</a>
@@ -46,4 +45,5 @@
                 </div>
             </div>
         </div>
+    </div>
 @endsection

@@ -27,7 +27,7 @@
         relative_urls: false
     });
     </script>
-    <div class="container">
+    <div class="container" style="height: 470px">
         <div class="row">
             <form action="/new-post" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">

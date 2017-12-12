@@ -11,7 +11,7 @@
                 href="{{ url('/user/'.$post->author_id)}}">{{ $post->author->name }}</a></p>
 @endsection
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 470px">
         <div class="row">
             @if($post)
                 <div>

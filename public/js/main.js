@@ -6,11 +6,19 @@ jQuery(document).ready(function($){
 		$('#main-nav').addClass('is-visible');
 		$('.cd-shadow-layer').addClass('is-visible');
 	});
+
+    $('.cd-menu-trigger-one').on('click', function(event){
+        event.preventDefault();
+        $('#cd-main-content').addClass('move-out');
+        $('#main-nav-one').addClass('is-visible');
+        $('.cd-shadow-layer').addClass('is-visible');
+    });
 	//close menu
 	$('.cd-close-menu').on('click', function(event){
 		event.preventDefault();
 		$('#cd-main-content').removeClass('move-out');
 		$('#main-nav').removeClass('is-visible');
+        $('#main-nav-one').removeClass('is-visible');
 		$('.cd-shadow-layer').removeClass('is-visible');
 	});
 

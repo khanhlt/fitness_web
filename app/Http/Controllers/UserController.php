@@ -101,7 +101,7 @@ class UserController extends Controller
         //
         $posts = Posts::where('author_id', $id)->where('active', '1')->orderBy('created_at', 'desc')->paginate(5);
         $title = User::find($id)->name;
-        return view('posts.myposts')->withPosts($posts)->withTitle($title);
+        return view('posts/myposts')->withPosts($posts)->withTitle($title);
     }
 
     public function user_posts_all()
