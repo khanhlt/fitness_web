@@ -7,13 +7,13 @@
     <link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="css/reset.css"> <!-- CSS reset -->
-    <link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
-    <script src="js/modernizr.js"></script> <!-- Modernizr -->
+    <link rel="stylesheet" href="{{ URL::asset('css/app.css') }}" type="text/css">
+    <link rel="stylesheet" href="{{ URL::asset('css/reset.css') }}"> <!-- CSS reset -->
+    <link rel="stylesheet" href="{{ URL::asset('css/style.css') }}"> <!-- Resource style -->
+    <script src="{{ URL::asset('js/modernizr.js') }}"></script> <!-- Modernizr -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-    <script src="js/main.js"></script> <!-- Resource jQuery -->
-    <script src="{{ asset('js/app.js') }}"></script>
+    <script src="{{ URL::asset('js/main.js') }}"></script> <!-- Resource jQuery -->
+    <script src="{{ URL::asset('js/app.js') }}"></script>
 
     <title>Fitness</title>
 </head>
