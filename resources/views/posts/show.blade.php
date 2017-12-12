@@ -1,9 +1,3 @@
-{{--/**--}}
-{{--* Created by PhpStorm.--}}
-{{--* User: atom--}}
-{{--* Date: 12/1/17--}}
-{{--* Time: 11:03 PM--}}
-{{--*/--}}
 @extends('layouts.app')
 @section('title')
     @if($post)

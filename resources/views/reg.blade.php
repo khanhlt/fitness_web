@@ -7,7 +7,7 @@
         <h2>Courses you can't register because of coincident</h2>
         @foreach($cart_deleted as $delete_item)
             {
-            <td><h5>{!!$delete_item->course->title!!}</h5></td><br/>
+            <td><h4>{!!$delete_item!!}</h4></td>
             }
         @endforeach
         @endif
@@ -15,7 +15,7 @@
         <h2>Registered Courses: </h2>
         @foreach($cart as $data_item)
             {
-            <td>{!!$data_item->course->title!!}</td><br/>
+            <td>{!!$data_item!!}</td><br/>
             }
         @endforeach
     @elseif($cart == NULL)

@@ -14,9 +14,8 @@ class CourseController extends Controller
 {
   public function show_all()
 	{
-		$courses = Course::orderBy('number_like','desc')->paginate(10);
-		$user_id = Auth::user()->id;
-		return view('course')->with(['courses' => $courses, 'user_id' => $user_id]);
+		$courses = Course::orderBy('number_like','desc')->paginate(5);
+		return view('course')->with(['courses' => $courses]);
 	}
 
 	public function show($id)
@@ -25,33 +24,33 @@ class CourseController extends Controller
 		$comments = CourseComment::select()->where('course_id', $id)->get();
 
 		$user_id = Auth::user()->id;
-		return view('course1')->with(['course' => $course, 'user_id' => $user_id , 'comments' => $comments]);
+		return view('courseDetail')->with(['course' => $course, 'user_id' => $user_id , 'comments' => $comments]);
 	}
 
 	public function listcourse(Request $request)
 	{
 		if (($request->ages <= 40) && (($request->weight) >= ($request->height -90)) )
 		{
-			$course = Course::where('level','=','1')->orderBy('number_like','desc')->paginate(30);
+			$course = Course::select()->where('level','=','1')->get();
 			return view('mypage',['course'=> $course]);
-			// return view('mypage')->with('course' => $course);
-		} else
+		}
+		else
 		{
 			if ($request->ages >50 )
 			{
-				$course = Course::where('level','=','2')->orderBy('number_like','desc')->paginate(30);
-
+				$course = Course::select()->where('level','=','2')->get();
 				return view('mypage',['course'=> $course]);
-			} else {
-				$course = Course::where('level','=','3')->orderBy('number_like','desc')->paginate(30);
+			}
+			else
+            {
+				$course = Course::select()->where('level','=','3')->get();
 				return view('mypage',['course'=> $course]);
-        
-// 			return view('mypage',['course'=> $course]);
-// 			} else {
-// 				$course = Course::select()->where('level','=','3')->get();
-// 			return view('mypage',['course'=> $course]);
-
 			}
 		}
 	}
+
+	public function fail()
+    {
+        return redirect()->back()->with('altert','You are not logging in!');
+    }
 }
