@@ -1,12 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 500px">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
-                    <div class="panel-heading">Registration</div>
-
+                    <div class="panel-heading">Show us your current age, weight & height. We'll provide appropriate courses for
+                        you!
+                    </div>
                     <meta name="viewport" content="width=device-width, initial-scale=1">
                     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
                     <style>
@@ -60,4 +61,7 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
 @endsection

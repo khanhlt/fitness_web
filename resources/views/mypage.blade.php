@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 470px">
         <form action="{{route('reg_course')}}" method="post">
             {{csrf_field()}}
             <fieldset>
