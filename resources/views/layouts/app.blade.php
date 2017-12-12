@@ -37,6 +37,9 @@
         </div>
     </section> <!-- cd-intro -->
 
+    <footer class="footer">
+        <p>Created by: V's members. Copyright &copy; 2017</p>
+    </footer>
 </main>
 
 

@@ -7176,11 +7176,12 @@ html, body {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: white;
-    color:  #984513;
+    background-color: transparent;
+    color: #092f4d;
     text-align: center;
     flex: auto;
-    margin-top: 40px;
+    line-height: 50px;
+    height: 50px;
 }
 
 

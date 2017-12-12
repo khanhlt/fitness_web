@@ -29,7 +29,6 @@
         <a2>great to start, but</a2>
         <a3>you have to start</a3>
         <a4>to be great!</a4>
-
     </section> <!-- cd-intro -->
 </main>
 
@@ -66,5 +65,6 @@
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="js/main.js"></script> <!-- Resource jQuery -->
+
 </body>
 </html>

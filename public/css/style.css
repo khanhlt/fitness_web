@@ -57,7 +57,7 @@ Main components
 #cd-main-content {
     position: relative;
     height: 100%;
-    overflow: scroll;
+    /*overflow: scroll;*/
     background-color: #3a393f;
     /* slightly visible only when we resize this element */
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);

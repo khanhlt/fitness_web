@@ -99,7 +99,8 @@ class PostController extends Controller
 
         // return all posts of user
         $user = $request->user();
-        $landing = 'user/'.$user->id.'/posts';
+//        $landing = 'user/'.$user->id.'/posts';
+        $landing = '/'.$slug;
         return redirect($landing)->withMessage($message);
     }
 
