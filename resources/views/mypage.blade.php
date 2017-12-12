@@ -20,14 +20,10 @@
 
                     @endforeach
                 </table>
-               
+
 
             </fieldset>
         </form>
-<<<<<<< HEAD
-        {!! $course->render() !!}
-=======
->>>>>>> 77dddf63d135af3733d943097e93b002ddef9373
     </div>
 
 @endsection
