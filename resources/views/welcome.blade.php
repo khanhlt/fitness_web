@@ -21,12 +21,12 @@
         <a4>to be great!</a4>
         <header class="cd-header">
             <div id="cd-logo"></div>
-            <a class="cd-menu-trigger" href="#main-nav">Menu<span></span></a>
+            <a class="cd-menu-trigger" href="#main-nav" style="color: white">Menu<span></span></a>
             @guest
-                <a class="cd-menu-one" href="{{ route('login') }}">Log in</a>
-                <a class="cd-menu-two" href="{{ route('register') }}">Register</a>
+                <a class="cd-menu-one" href="{{ route('login') }}" style="color: white">Log in</a>
+                <a class="cd-menu-two" href="{{ route('register') }}" style="color: white">Register</a>
                 @else
-                    <a class="cd-menu-trigger-one" href="#main-nav-one">{{Auth::user()->name}}<span></span></a>
+                    <a class="cd-menu-trigger-one" href="#main-nav-one" style="color: white">{{Auth::user()->name}}<span></span></a>
                     @endguest
         </header>
     </section> <!-- cd-intro -->
