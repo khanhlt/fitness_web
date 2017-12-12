@@ -18,6 +18,18 @@
     <title>Fitness</title>
 </head>
 <body>
+
+<div class="cd-header2">
+    <div id="cd-logo"></div>
+    <a class="cd-menu-trigger" href="#main-nav" style="color: white">Menu<span></span></a>
+    @guest
+        <a class="cd-menu-one" href="{{ route('login') }}" style="color: white">Log in</a>
+        <a class="cd-menu-two" href="{{ route('register') }}" style="color: white">Register</a>
+        @else
+            <a class="cd-menu-trigger-one" href="#main-nav-one" style="color: white">{{Auth::user()->name}}<span></span></a>
+            @endguest
+</div>
+<div class="cd-blurred-bg"></div>
 <main id="cd-main-content2">
     <section>
         <div id="app">
@@ -25,17 +37,6 @@
         </div>
     </section> <!-- cd-intro -->
 
-    <header class="cd-header2">
-        <div id="cd-logo"></div>
-        <a class="cd-menu-trigger" href="#main-nav" style="color: white">Menu<span></span></a>
-        @guest
-            <a class="cd-menu-one" href="{{ route('login') }}" style="color: white">Log in</a>
-            <a class="cd-menu-two" href="{{ route('register') }}" style="color: white">Register</a>
-            @else
-                <a class="cd-menu-trigger-one" href="#main-nav-one" style="color: white">{{Auth::user()->name}}<span></span></a>
-                @endguest
-    </header>
-    <div class="cd-blurred-bg"></div>
 </main>
 
 
