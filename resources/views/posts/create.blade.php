@@ -22,12 +22,12 @@
             "searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime media nonbreaking",
             "save table contextmenu directionality emoticons template paste textcolor jbimages"
         ],
-        content_css: "css/content.css",
+        content_css: "css/app.css",
         toolbar: "insertfile undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | print preview media fullpage | forecolor backcolor emoticons jbimages",
         relative_urls: false
     });
     </script>
-    <div class="container">
+    <div class="container" style="height: 470px">
         <div class="row">
             <form action="/new-post" method="post">
                 <input type="hidden" name="_token" value="{{ csrf_token() }}">
