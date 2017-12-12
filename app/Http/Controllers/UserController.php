@@ -81,8 +81,7 @@ class UserController extends Controller
             return redirect()->back()->with('alert','Wrong Current Password!');
         } elseif($request->input('new_password') != $request->input('new_password_confirmation')) {
             return redirect()->back()->with('alert','Password confirmation failed!');
-        }
-        else {
+        } else {
             $user->password = bcrypt($request->input('new_password'));
             $user->save();
             $landing = 'profile/' . $user->id;

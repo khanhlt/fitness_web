@@ -68,6 +68,7 @@ Route::get('/{slug}', ['as' => 'post', 'uses' => 'PostController@show'])->where(
 
 
 /* course */
+Route::get('course/fail', 'CourseController@fail')->name('fail');
 
 Route::get('course/{id}', 'CourseController@show');
 
