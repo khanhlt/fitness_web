@@ -22,15 +22,16 @@ class CourseContentController extends Controller
     {
         $userID = Auth::user()->id;
         $data = $request->checkbox;
-        foreach ($data as $data_item){
+        if ($data != NULL) {
+            # code...
+            foreach ($data as $data_item){
             $course = CourseContent::where('id','=',$data_item)->get();
             foreach ($course as $course_1){
                 $course_id = $course_1->course_id;
 
             }
         }
-
-        $check = Registration::where([
+         $check = Registration::where([
             ['user_id','=',$userID],
             ['course_id','=',$course_id]
         ])->get();
@@ -47,5 +48,10 @@ class CourseContentController extends Controller
         }
 
     }
+    elseif ($data == NULL) {
+        # code...
+       echo "No";
+    }
 
+        }
 }

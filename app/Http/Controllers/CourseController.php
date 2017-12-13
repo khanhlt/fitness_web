@@ -12,6 +12,7 @@ use App\Course;
 
 class CourseController extends Controller
 {
+
   public function show_all()
 	{
 		$courses = Course::orderBy('number_like','desc')->paginate(5);
@@ -56,7 +57,9 @@ class CourseController extends Controller
 		return view('mypage',['course'=> $course]);
 	}
 
-	public function fail()
+
+
+    public function fail()
     {
         return redirect()->back()->with('altert','You are not logging in!');
     }

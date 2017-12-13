@@ -26,7 +26,7 @@ class RegistrationController extends Controller
         $cart_deleted = array();
         if ($data != NULL) {
               foreach ($data as $key) {
-            $registration = Registration::where('course_id', '=', $key)->first();
+            $registration = Registration::where('course_id', $key)->where('user_id',$userID)->first();
             if ($registration != NULL) {
                 array_push($cart_deleted, $registration->course->title);
 
