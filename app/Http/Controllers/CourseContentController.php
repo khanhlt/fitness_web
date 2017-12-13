@@ -22,14 +22,9 @@ class CourseContentController extends Controller
     {
         $userID = Auth::user()->id;
         $data = $request->checkbox;
-        $this->validate($request,[
-           'checkbox[]'=>'required',
-        ],
-            [
-                'required'=>'You have to choose actions',
-            ]);
+        
         if(!isset($request->checkbox)){
-            return redirect()->route('CourseContent', ['id' => $id]);
+            return redirect()->route('CourseContent', ['id' => $id])->with('notice1','You have to choose actions');
 
         }else {
             foreach ($data as $data_item) {
