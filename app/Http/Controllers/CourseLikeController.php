@@ -13,7 +13,7 @@ class CourseLikeController extends Controller
 {
   public function like($id) 
   {
-  	//$course = Course::find($id);
+  	$course = Course::find($id);
   	$userID = Auth::user()->id;
 
   	$element = CourseLike::where([
@@ -24,9 +24,12 @@ class CourseLikeController extends Controller
   	if($element == NULL)
   	{
   		$like = new CourseLike;
-			$like->course_id = $id;
-			$like->user_id = $userID;
-			$like->save();	
+		$like->course_id = $id;
+		$like->user_id = $userID;
+        $like->save();
+
+        $course->number_like++;
+        $course->save();
   	}
   	return redirect('course');
 

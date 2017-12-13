@@ -39,10 +39,6 @@
 </head>
 <body> --}}
 
-{{--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">--}}
-{{--<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">--}}
-{{--<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>--}}
-{{--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>--}}
 <head>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
@@ -90,9 +86,9 @@
                                     <div class="formal">
                                         @if(isset(Illuminate\Support\Facades\Auth::user()->id))
                                             <form action="like/{{$course->id}}" method="get">
-                                                <button type="submit"
-                                                        class="btn btn-primary glyphicon glyphicon-hand-up">
-                                                    {{ count($course->like) }}</button>
+                                                <button type="submit" class="btn btn-primary glyphicon glyphicon-hand-up">
+                                                    {{ count($course->like) }}
+                                                </button>
                                             </form>
                                             <br><br>
                                             <h5>Comment ... <span class="glyphicon glyphicon-pencil"></span></h5><br>
