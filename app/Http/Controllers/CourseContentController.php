@@ -22,6 +22,12 @@ class CourseContentController extends Controller
     {
         $userID = Auth::user()->id;
         $data = $request->checkbox;
+        if ($data != NULL) {
+            # code...
+            foreach ($data as $data_item){
+            $course = CourseContent::where('id','=',$data_item)->get();
+            foreach ($course as $course_1){
+                $course_id = $course_1->course_id;
         $this->validate($request,[
            'checkbox[]'=>'required',
         ],
@@ -57,7 +63,11 @@ class CourseContentController extends Controller
             }
         }
 
-
+    }
+    elseif ($data == NULL) {
+        # code...
+       echo "No";
     }
 
+        }
 }
