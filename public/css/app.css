@@ -7190,5 +7190,17 @@ html, body {
     height: 50px;
 }
 
-
+/* ======== Hoang ============= */
+.classes_wrapper {
+    padding:4% 0;
+}
+.class_left{
+    width:40%;
+    float:left;
+}
+.class_right{
+    width:60%;
+    float: left;
+    padding: 2%;
+}
 

@@ -45,22 +45,22 @@
 </nav>
 
 @if(Auth::user())
-<nav id="main-nav-one">
-    <ul>
-        <li><a href="{{ route('logout') }}"
-               onclick="event.preventDefault();document.getElementById('logout-form').submit();"><span>Log out</span></a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                  style="display: none;">
-                {{ csrf_field() }}
-            </form>
-        </li>
-        <li><a href="{{ route("profile", auth()->user()->id) }}"><span>My profile</span></a></li>
-        <li><a href="{{ route("ListRegistion", auth()->user()->id) }}"><span>My page</span></a></li>
-        <li><a href="{{ url('/new-post') }}"><span>Add new post</span></a></li>
-        <li><a href="{{ url('/user/'.Auth::id().'/posts') }}"><span>My posts</span></a></li>
-    </ul>
-    <a href="#0" class="cd-close-menu">Close<span></span></a>
-</nav>
+    <nav id="main-nav-one">
+        <ul>
+            <li><a href="{{ route('logout') }}"
+                   onclick="event.preventDefault();document.getElementById('logout-form').submit();"><span>Log out</span></a>
+                <form id="logout-form" action="{{ route('logout') }}" method="POST"
+                      style="display: none;">
+                    {{ csrf_field() }}
+                </form>
+            </li>
+            <li><a href="{{ route("profile", auth()->user()->id) }}"><span>My profile</span></a></li>
+            <li><a href="{{ route("ListRegistion", auth()->user()->id) }}"><span>My page</span></a></li>
+            <li><a href="{{ url('/new-post') }}"><span>Add new post</span></a></li>
+            <li><a href="{{ url('/user/'.Auth::id().'/posts') }}"><span>My posts</span></a></li>
+        </ul>
+        <a href="#0" class="cd-close-menu">Close<span></span></a>
+    </nav>
 @endif
 
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>

@@ -14,11 +14,9 @@
                         .mySlides {
                             display: none
                         }
-
                         .w3-left, .w3-right, .w3-badge {
                             cursor: pointer
                         }
-
                         .w3-badge {
                             height: 13px;
                             width: 13px;

@@ -19,6 +19,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
+Route::get('/layouts/app', 'HomeController@index')->name('home');
+
+Route::get('/all-posts', 'UserController@user_posts_all')->name('all-posts');
+
 Route::get('course', 'CourseController@show_all')->name('course');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -92,7 +92,7 @@ Main components
     position: relative;
     height: 100%;
     overflow: scroll;
-    background: url("../images/bg2.jpeg") repeat center center;
+    background: url("../images/light-blue-background-1.jpg") repeat center center;
     background-size: cover;
     /* slightly visible only when we resize this element */
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
