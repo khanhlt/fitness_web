@@ -27,6 +27,8 @@ Route::get('course', 'CourseController@show_all')->name('course');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::get('/welcome', 'HomeController@welcome')->name('welcome');
+
 Route::get('listTrainer', 'TrainerController@list')->name('listTrainer');
 
 Route::get('ListRegistion', 'RegistrationController@list')->name('ListRegistion');

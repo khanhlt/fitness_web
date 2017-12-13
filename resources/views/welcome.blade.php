@@ -35,7 +35,7 @@
 
 <nav id="main-nav">
     <ul>
-        <li><a href="{{ route('home') }}"><span>Home</span></a></li>
+        <li><a href="{{ route('welcome') }}"><span>Home</span></a></li>
         <li><a href="{{ route('course') }}"><span>Courses</span></a></li>
         <li><a href="{{ route('listTrainer') }}"><span>Trainers</span></a></li>
         <li><a href="{{ route('all-posts')}}"><span>Blog</span></a></li>

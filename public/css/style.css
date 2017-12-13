@@ -92,8 +92,9 @@ Main components
     position: relative;
     height: 100%;
     overflow: scroll;
-    background: url("../images/7-Reasons-to-Never-Miss-a-Monday_1.jpg") no-repeat center center;
+    /*background: url("../images/7-Reasons-to-Never-Miss-a-Monday_1.jpg") no-repeat center center;*/
     background-size: cover;
+    background-color: white;
     /* slightly visible only when we resize this element */
     box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
     z-index: 1;
