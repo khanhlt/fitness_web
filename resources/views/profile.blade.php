@@ -36,6 +36,17 @@
                                 </div>
                             </div>
 
+                            <div class="form-group{{ $errors->has('user_name') ? ' has-error' : '' }} panel">
+                                <label for="purpose" class="col-md-4 ">Purpose</label>
+                                <div class="col-md-6">
+                                    @if($user->purpose == "all")
+                                        <h5> Trainer & Participant</h5>
+                                    @else
+                                        <h5>{{ $user->purpose }} </h5>
+                                    @endif
+                                </div>
+                            </div>
+
                             <div class="form-group{{ $errors->has('birthday') ? ' has-error' : '' }} panel">
                                 <label for="birthday" class="col-md-4 ">Birthday</label>
                                 <div class="col-md-6">
