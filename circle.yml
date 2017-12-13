@@ -8,10 +8,10 @@ machine:
   environment:
     ENVIRONMENT: testing
     DB_URL: 127.0.0.1
-    DB_NAME: db_ltw 
+    DB_NAME: database_ltw
     DB_USER: root 
     DB_CONNECTION: mysql
-    APP_KEY: base64:BzE2Ob3nDEAYAljmVpNZQ+/0Lz7sES+VKFXNlvp853A=
+    APP_KEY: base64:Waj/hQrODkD1ReyzoS+N6Sbz8+m1O2TlnhNOHQYgMhw=
 
 dependencies:
   override:
