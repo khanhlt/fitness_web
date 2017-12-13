@@ -1,3 +1,4 @@
+<?php session_start() ?>
 
 
  <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -13,17 +14,26 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container" style="height: 470px">
+    <div class="container">
         <form action="{{route('reg_course')}}" method="post">
             {{csrf_field()}}
             <fieldset>
                 <input class="btn btn-primary" type="submit" name="submit" value="Registration">
                 <table class="table table-hover">
+
+                            @if(session('notice'))
+                        <div class="alert alert-danger">
+                            <ul>
+                                {{session('notice')}}
+                            </ul>
+                        </div>
+                                @endif
+
+
                     <thead>
                     <tr>
                         <th>Course name</th>
                         <th>Done</th>
-
                     </tr>
                     </thead>
                     <tbody>

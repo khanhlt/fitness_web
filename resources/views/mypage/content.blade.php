@@ -14,7 +14,17 @@
                             </div>
                         @endif
 
-                        <form action="{{route('CheckActions')}}" method="post" role="form">
+                            @if ($errors->any())
+                                <div class="alert alert-danger">
+                                    <ul>
+                                        @foreach ($errors->all() as $error)
+                                            <li>{{ $error }}</li>
+                                        @endforeach
+                                    </ul>
+                                </div>
+                            @endif
+
+                        <form action="{{route('CheckActions',['id'=>$id])}}" method="post" role="form">
                             {{csrf_field()}}
                             <fieldset>
                                 @foreach($content as $ct)
@@ -27,6 +37,7 @@
                                             @elseif( $done == NULL)
                                                 <td><input type="checkbox" name="checkbox[]"
                                                            value="<?php echo $ct->id;?>" value="checked"/></td>
+
                                             @endif
                                         </tr>
                                     </table>
