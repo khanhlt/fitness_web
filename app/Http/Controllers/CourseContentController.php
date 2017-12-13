@@ -22,6 +22,7 @@ class CourseContentController extends Controller
     {
         $userID = Auth::user()->id;
         $data = $request->checkbox;
+
         if ($data != NULL) {
             # code...
             foreach ($data as $data_item){
@@ -34,8 +35,9 @@ class CourseContentController extends Controller
             [
                 'required'=>'You have to choose actions',
             ]);
+
         if(!isset($request->checkbox)){
-            return redirect()->route('CourseContent', ['id' => $id]);
+            return redirect()->route('CourseContent', ['id' => $id])->with('notice1','You have to choose actions');
 
         }else {
             foreach ($data as $data_item) {

@@ -1,3 +1,4 @@
+<?php session_start()?>
 @extends('layouts.app')
 
 @section('content')
@@ -14,12 +15,10 @@
                             </div>
                         @endif
 
-                            @if ($errors->any())
+                            @if(session('notice1'))
                                 <div class="alert alert-danger">
                                     <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
+                                        {{session('notice1')}}
                                     </ul>
                                 </div>
                             @endif
