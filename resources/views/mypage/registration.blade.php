@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 470px">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -13,6 +13,7 @@
                                 {{ session('status') }}
                             </div>
                         @endif
+
                         <tr>
                             <div class="col-md-6">
                                 <td>Course</td>
@@ -21,12 +22,9 @@
                                 <td>Time</td>
                                 <br>
                             </div>
-
-
                         </tr>
 
                         @foreach($registration as $regis)
-
                             <?php
                             $date = date('Y-m-d H:i:s');
                             $datetime2 = strtotime($date);

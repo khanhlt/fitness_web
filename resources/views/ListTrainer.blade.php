@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="container">
+    <div class="container" style="height: 470px">
         <div class="row">
             <div class="col-md-8 col-md-offset-2">
                 <div class="panel panel-default">
@@ -13,24 +13,18 @@
                                 {{ session('status') }}
                             </div>
                         @endif
-                            <table>
-                                <thead>
-                                <tr align="center">
-                                    <th>ID</th>
-                                    <th>Name</th>
-                                    <th>Purpose</th>
-                                </tr>
-                                </thead>
-                                <tbody>
+                        <table>
+                            <tr>
+                                <div class="col-md-4">ID</div>
+                                <div class="col-md-8">Name</div>
+                            </tr>
+                            <tr>
                                 @foreach($trainer as $tn)
-                                    <tr class="odd gradeX" align="center">
-                                        <td>{{$tn->id}}</td>
-                                        <td><a href="courseTrainer/{{$tn->id}}">{{$tn->name}}</a> </td>
-                                        <td>{{$tn->purpose}}</td>
-                                    </tr>
+                                    <div class="col-md-4">{{$tn->id}}</div>
+                                    <div class="col-md-8"><a href="courseTrainer/{{$tn->id}}">{{$tn->name}}</a></div>
                                 @endforeach
-                                </tbody>
-                            </table>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
