@@ -87,7 +87,6 @@ Route::post('comment/add', 'PostCommentController@store');
 Route::post('comment/delete/{id}', 'PostCommentController@destroy');
 
 
-
 /* display all posts */
 Route::get('user/{id}/posts', 'UserController@user_posts')->where('id', '[0-9]+');
 // display single post
