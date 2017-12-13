@@ -1,3 +1,4 @@
+<?php session_start() ?>
 
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -12,10 +13,20 @@
             <fieldset>
                 <input class="btn btn-primary" type="submit" name="submit" value="Registration">
                 <table class="table table-hover">
+
+                            @if(session('notice'))
+                        <div class="alert alert-danger">
+                            <ul>
+                                {{session('notice')}}
+                            </ul>
+                        </div>
+                                @endif
+
+
                     <thead>
                     <tr>
                         <th>Course name</th>
-                        <th>Done</th>
+                        <th>Start</th>
                     </tr>
                     </thead>
                     <tbody>
