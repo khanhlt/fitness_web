@@ -47,10 +47,7 @@ class RegistrationController extends Controller
                 }
             }
         }
-        
-        
-      
-
+       
         return view('reg', ['cart' => $cart, 'cart_deleted' => $cart_deleted]);
 
     }
