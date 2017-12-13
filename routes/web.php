@@ -112,7 +112,7 @@ Route::post('/comment/{id}', 'CourseCommentController@postComment');
 
 Route::get('CourseContent/{id}', 'CourseContentController@content')->name('CourseContent');
 
-Route::post('CheckActions', 'CourseContentController@check_action')->name('CheckActions');
+Route::post('CheckActions/{id}', 'CourseContentController@check_action')->name('CheckActions');
 
 Route::post('reg_course', 'RegistrationController@registration')->name('reg_course');
 
