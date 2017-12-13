@@ -8,11 +8,11 @@
                 <div class="panel-heading">Register</div>
 
                 <div class="panel-body">
+                    <em style="color: #ce8483; font-style: italic">Fields with (*) are required</em><br><br>
                     <form class="form-horizontal" method="POST" action="{{ route('register') }}">
                         {{ csrf_field() }}
-
                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}">
-                            <label for="name" class="col-md-4 control-label">Name</label>
+                            <label for="name" class="col-md-4 control-label" style="text-align: left">Name *</label>
 
                             <div class="col-md-6">
                                 <input id="name" type="text" class="form-control" name="name" value="{{ old('name') }}" required autofocus>
@@ -26,7 +26,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                            <label for="email" class="col-md-4 control-label">E-Mail Address</label>
+                            <label for="email" class="col-md-4 control-label" style="text-align: left">E-Mail Address *</label>
 
                             <div class="col-md-6">
                                 <input id="email" type="email" class="form-control" name="email" value="{{ old('email') }}" required>
@@ -40,7 +40,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('user_name') ? ' has-error' : '' }}">
-                            <label for="user_name" class="col-md-4 control-label">User Name</label>
+                            <label for="user_name" class="col-md-4 control-label" style="text-align: left">User Name *</label>
 
                             <div class="col-md-6">
                                 <input id="user_name" type="text" class="form-control" name="user_name" value="{{ old('user_name') }}" required>
@@ -54,7 +54,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('purpose') ? ' has-error' : '' }}">
-                            <label for="purpose" class="col-md-4 control-label">Purpose</label>
+                            <label for="purpose" class="col-md-4 control-label" style="text-align: left">Purpose *</label>
 
                             <div class="col-md-6">
                                 <input type="checkbox" class="" name="purpose[]" value="student"> Student
@@ -68,7 +68,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('birthday') ? ' has-error' : '' }}">
-                            <label for="birthday" class="col-md-4 control-label">Birthday</label>
+                            <label for="birthday" class="col-md-4 control-label" style="text-align: left">Birthday</label>
 
                             <div class="col-md-6">
                                 <input id="birthday" type="date" class="form-control" name="birthday" value="{{ old('birthday') }}">
@@ -82,7 +82,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('address') ? ' has-error' : '' }}">
-                            <label for="address" class="col-md-4 control-label">Address</label>
+                            <label for="address" class="col-md-4 control-label" style="text-align: left">Address</label>
 
                             <div class="col-md-6">
                                 <input id="address" type="text" class="form-control" name="address" value="{{ old('address') }}">
@@ -96,7 +96,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('weight') ? ' has-error' : '' }}">
-                            <label for="weight" class="col-md-4 control-label">Weight</label>
+                            <label for="weight" class="col-md-4 control-label" style="text-align: left">Weight</label>
 
                             <div class="col-md-6">
                                 <input id="weight" type="number" class="form-control" name="weight" value="{{ old('weight') }}">
@@ -110,7 +110,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('job') ? ' has-error' : '' }}">
-                            <label for="job" class="col-md-4 control-label">Job</label>
+                            <label for="job" class="col-md-4 control-label" style="text-align: left">Job</label>
 
                             <div class="col-md-6">
                                 <input id="job" type="text" class="form-control" name="job" value="{{ old('job') }}">
@@ -124,7 +124,7 @@
                         </div>
 
                         <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                            <label for="password" class="col-md-4 control-label">Password</label>
+                            <label for="password" class="col-md-4 control-label" style="text-align: left">Password *</label>
 
                             <div class="col-md-6">
                                 <input id="password" type="password" class="form-control" name="password" required>
@@ -138,7 +138,7 @@
                         </div>
 
                         <div class="form-group">
-                            <label for="password-confirm" class="col-md-4 control-label">Confirm Password</label>
+                            <label for="password-confirm" class="col-md-4 control-label" style="text-align: left">Confirm Password *</label>
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
