@@ -44,6 +44,9 @@
                             </tr>
                         @endforeach
                     </div>
+                    <div class="panel-heading">
+                        <a href="{{route('home')}}"><button>Tutorial</button></a>
+                    </div>
                 </div>
             </div>
         </div>
