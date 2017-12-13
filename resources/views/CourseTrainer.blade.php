@@ -16,7 +16,12 @@
 
                         @foreach($registration as $regis)
                             <tr>
-                                <td>{{$regis->course->title}}</td>
+                                <td>
+                                    {{--<a href="course/{{$regis->course->id}}">--}}
+                                        {{$regis->course->title}}
+                                    {{--</a>--}}
+                                </td>
+                                <br>
                             </tr>
                         @endforeach
                     </div>

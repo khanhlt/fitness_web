@@ -44,7 +44,6 @@ Route::post('/updatepassword/{id}', 'UserController@updatePassword')->name('upda
 
 Route::get('all-posts', 'UserController@user_posts_all')->name('all-posts');
 
-
 // mypage
 Route::get('mypage', 'CourseController@listcourse')->name('mypage');
 
